@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebTech | Desarrollo Web</title>
+    <meta
+      name="description"
+      content="Agencia de desarrollo web e inteligencia artificial"
+    />
+    <link rel="icon" href="img/logo_ico.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN for Vanilla implementation) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cyber: {
+                black: "#020205",
+                dark: "#0a0a12",
+                gray: "#1a1a2e",
+                blue: "#00f0ff",
+                purple: "#7000ff",
+                metallic: "#2d3748",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Orbitron", "sans-serif"],
+            },
+            backgroundImage: {
+              "hero-glow":
+                "conic-gradient(from 180deg at 50% 50%, #0a0a12 0deg, #020205 180deg, #0a0a12 360deg)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-cyber-black text-white overflow-x-hidden selection:bg-cyber-blue selection:text-black"
+  >
+    <!-- Background Canvas -->
+    <canvas
+      id="particle-canvas"
+      class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30"
+    ></canvas>
+
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-cyber-black/80 backdrop-blur-md"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo (Acts as Home Link) -->
+          <a href="#/" class="flex items-center gap-2 group nav-link">
+            <div class="relative">
+              <i
+                data-lucide="cpu"
+                class="w-8 h-8 text-cyber-blue group-hover:animate-pulse"
+              ></i>
+              <div
+                class="absolute inset-0 bg-cyber-blue blur-lg opacity-20 group-hover:opacity-40 transition-opacity"
+              ></div>
+            </div>
+            <span
+              class="text-2xl font-bold tracking-tighter text-white font-display"
+            >
+              WEB<span class="text-cyber-blue">TECH</span>
+            </span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="#/servicios"
+              class="nav-link text-sm font-medium hover:text-cyber-blue transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="#/portfolio"
+              class="nav-link text-sm font-medium hover:text-cyber-blue transition-colors"
+              >Portfolio</a
+            >
+            <a
+              href="#/nosotros"
+              class="nav-link text-sm font-medium hover:text-cyber-blue transition-colors"
+              >Nosotros</a
+            >
+            <a href="#/contacto" class="nav-link">
+              <button
+                class="px-4 py-2 text-xs font-bold uppercase tracking-widest border border-cyber-blue/30 text-cyber-blue hover:bg-cyber-blue hover:text-black transition-all duration-300 btn-glow"
+              >
+                Start Project
+              </button>
+            </a>
+          </div>
+
+          <!-- Mobile Toggle -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-white p-2 hover:text-cyber-blue transition-colors"
+            >
+              <i data-lucide="menu"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-cyber-black border-b border-white/10"
+      >
+        <div class="px-4 py-4 space-y-2 flex flex-col">
+          <a
+            href="#/servicios"
+            class="mobile-link block px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md"
+            >Servicios</a
+          >
+          <a
+            href="#/portfolio"
+            class="mobile-link block px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md"
+            >Portfolio</a
+          >
+          <a
+            href="#/nosotros"
+            class="mobile-link block px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md"
+            >Nosotros</a
+          >
+          <a
+            href="#/contacto"
+            class="mobile-link block px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-md"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-20 min-h-screen relative z-10">
+      <!-- PAGE: HOME -->
+      <section id="page-home" class="page-section hidden">
+        <!-- Hero -->
+        <div
+          class="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-hero-glow opacity-30"></div>
+          <div
+            class="relative z-10 text-center px-4 max-w-5xl mx-auto scroll-reveal"
+          >
+            <span
+              class="inline-block py-1 px-3 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-xs font-bold tracking-widest uppercase mb-6"
+            >
+              Innovación Digital 2026
+            </span>
+            <h1
+              class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-tight font-display"
+            >
+              CONSTRUIMOS TU <br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow"
+              >
+                FUTURO DIGITAL
+              </span>
+            </h1>
+            <p
+              class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+            >
+              Fusionamos desarrollo web de vanguardia con inteligencia
+              artificial para crear experiencias digitales que transforman
+              negocios.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <a href="#/contacto" class="w-full sm:w-auto">
+                <button
+                  class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow flex items-center justify-center gap-2"
+                >
+                  Solicitar Presupuesto
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              </a>
+              <a href="#/servicios" class="w-full sm:w-auto">
+                <button
+                  class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-white/20 text-white hover:border-white hover:bg-white/5 transition-all duration-300"
+                >
+                  Explorar Servicios
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Preview -->
+        <div class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Service Cards -->
+            <a href="#/servicios/desarrollo-web" class="group">
+              <div
+                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-100"
+              >
+                <div
+                  class="mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i data-lucide="code" class="w-8 h-8"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
+                >
+                  Desarrollo Web
+                </h3>
+                <p class="text-gray-400 text-sm">Sitios modernos y veloces.</p>
+              </div>
+            </a>
+            <a href="#/servicios/inteligencia-artificial" class="group">
+              <div
+                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-200"
+              >
+                <div
+                  class="mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i data-lucide="brain" class="w-8 h-8"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
+                >
+                  Inteligencia Artificial
+                </h3>
+                <p class="text-gray-400 text-sm">Automatización y chatbots.</p>
+              </div>
+            </a>
+            <a href="#/servicios/web-ia" class="group">
+              <div
+                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-300"
+              >
+                <div
+                  class="mb-4 text-yellow-400 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i data-lucide="zap" class="w-8 h-8"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
+                >
+                  Web + IA
+                </h3>
+                <p class="text-gray-400 text-sm">El poder combinado.</p>
+              </div>
+            </a>
+            <a href="#/servicios/mantenimiento" class="group">
+              <div
+                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-400"
+              >
+                <div
+                  class="mb-4 text-green-400 group-hover:scale-110 transition-transform duration-300"
+                >
+                  <i data-lucide="shield" class="w-8 h-8"></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
+                >
+                  Mantenimiento
+                </h3>
+                <p class="text-gray-400 text-sm">Seguridad y estabilidad.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- NEW: Process Section -->
+        <div class="py-20 bg-cyber-black/50 border-y border-white/5">
+          <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4 font-display">
+                Nuestro <span class="text-cyber-blue">Proceso</span>
+              </h2>
+              <p class="text-gray-400">
+                Metodología ágil para resultados exponenciales.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+              <!-- Connecting Line (Desktop) -->
+              <div
+                class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent z-0"
+              ></div>
+
+              <!-- Step 1 -->
+              <div class="relative z-10 text-center scroll-reveal delay-100">
+                <div
+                  class="w-24 h-24 mx-auto bg-cyber-dark border border-cyber-blue/50 rounded-full flex items-center justify-center mb-6 box-glow"
+                >
+                  <i data-lucide="search" class="w-10 h-10 text-cyber-blue"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">1. Análisis</h3>
+                <p class="text-sm text-gray-400">
+                  Estudiamos tus necesidades y definimos la arquitectura ideal.
+                </p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="relative z-10 text-center scroll-reveal delay-200">
+                <div
+                  class="w-24 h-24 mx-auto bg-cyber-dark border border-purple-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
+                >
+                  <i
+                    data-lucide="pen-tool"
+                    class="w-10 h-10 text-purple-500"
+                  ></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">2. Diseño</h3>
+                <p class="text-sm text-gray-400">
+                  Prototipado UI/UX futurista enfocado en la conversión.
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="relative z-10 text-center scroll-reveal delay-300">
+                <div
+                  class="w-24 h-24 mx-auto bg-cyber-dark border border-pink-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
+                >
+                  <i data-lucide="code-2" class="w-10 h-10 text-pink-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">3. Desarrollo</h3>
+                <p class="text-sm text-gray-400">
+                  Código limpio, escalable y optimizado para SEO.
+                </p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="relative z-10 text-center scroll-reveal delay-400">
+                <div
+                  class="w-24 h-24 mx-auto bg-cyber-dark border border-green-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
+                >
+                  <i data-lucide="rocket" class="w-10 h-10 text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">4. Despliegue</h3>
+                <p class="text-sm text-gray-400">
+                  Lanzamiento, monitoreo y optimización continua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW: Tech Stack & Testimonials -->
+        <div class="py-20 max-w-7xl mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Tech Stack -->
+            <div class="scroll-reveal">
+              <h3
+                class="text-2xl font-bold mb-8 font-display border-l-4 border-cyber-blue pl-4"
+              >
+                Arsenal Tecnológico
+              </h3>
+              <div class="grid grid-cols-3 gap-4">
+                <!-- React -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="atom"
+                    class="w-8 h-8 mx-auto mb-2 text-blue-400"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400">React</span>
+                </div>
+                <!-- TypeScript -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="file-code"
+                    class="w-8 h-8 mx-auto mb-2 text-blue-600"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400"
+                    >TypeScript</span
+                  >
+                </div>
+                <!-- Tailwind -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="wind"
+                    class="w-8 h-8 mx-auto mb-2 text-cyan-400"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400">Tailwind</span>
+                </div>
+                <!-- Vercel/Deploy -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="cloud-lightning"
+                    class="w-8 h-8 mx-auto mb-2 text-white"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400">Vercel</span>
+                </div>
+                <!-- Docker -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="container"
+                    class="w-8 h-8 mx-auto mb-2 text-blue-500"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400">Docker</span>
+                </div>
+                <!-- Motion -->
+                <div
+                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
+                >
+                  <i
+                    data-lucide="move"
+                    class="w-8 h-8 mx-auto mb-2 text-purple-400"
+                  ></i>
+                  <span class="text-xs font-bold text-gray-400">Motion</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div
+              class="glass-panel p-8 rounded-xl relative scroll-reveal delay-200"
+            >
+              <i
+                data-lucide="quote"
+                class="absolute top-6 right-6 w-12 h-12 text-white/10"
+              ></i>
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-purple-600 rounded-full"
+                ></div>
+                <div>
+                  <h4 class="font-bold text-white">Elena K.</h4>
+                  <p class="text-xs text-cyber-blue uppercase tracking-wider">
+                    CEO, FutureSystems
+                  </p>
+                </div>
+              </div>
+              <p class="text-gray-300 italic leading-relaxed">
+                "WebTech transformó completamente nuestra infraestructura
+                digital. La integración de IA en nuestro servicio al cliente
+                redujo los tiempos de respuesta en un 80%. Simplemente
+                brillante."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: SERVICES INDEX -->
+      <section id="page-servicios" class="page-section hidden pt-10 pb-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="text-center mb-16 scroll-reveal">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+              Nuestros <span class="text-cyber-blue">Servicios</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Soluciones tecnológicas integrales diseñadas para escalar tu
+              negocio.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Service Item 1 -->
+            <a
+              href="#/servicios/desarrollo-web"
+              class="block h-full scroll-reveal delay-100"
+            >
+              <div
+                class="glass-panel p-8 rounded-xl h-full border border-white/5 hover:border-cyber-blue/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity"
+                ></div>
+                <div class="relative z-10">
+                  <div
+                    class="mb-6 p-4 bg-white/5 rounded-lg w-fit group-hover:bg-white/10 transition-colors"
+                  >
+                    <i data-lucide="code" class="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2
+                    class="text-2xl font-bold mb-4 group-hover:text-cyber-blue transition-colors"
+                  >
+                    Desarrollo Web
+                  </h2>
+                  <p class="text-gray-400 mb-6 leading-relaxed">
+                    Diseñamos sitios web modernos orientados a ofrecer una
+                    imagen profesional.
+                  </p>
+                  <div
+                    class="flex items-center text-sm font-bold uppercase tracking-wider text-cyber-blue group-hover:translate-x-2 transition-transform"
+                  >
+                    Ver Detalles
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Service Item 2 -->
+            <a
+              href="#/servicios/inteligencia-artificial"
+              class="block h-full scroll-reveal delay-200"
+            >
+              <div
+                class="glass-panel p-8 rounded-xl h-full border border-white/5 hover:border-cyber-blue/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity"
+                ></div>
+                <div class="relative z-10">
+                  <div
+                    class="mb-6 p-4 bg-white/5 rounded-lg w-fit group-hover:bg-white/10 transition-colors"
+                  >
+                    <i data-lucide="brain" class="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2
+                    class="text-2xl font-bold mb-4 group-hover:text-cyber-blue transition-colors"
+                  >
+                    Inteligencia Artificial
+                  </h2>
+                  <p class="text-gray-400 mb-6 leading-relaxed">
+                    Automatización de tareas y mejora de comunicación con IA.
+                  </p>
+                  <div
+                    class="flex items-center text-sm font-bold uppercase tracking-wider text-cyber-blue group-hover:translate-x-2 transition-transform"
+                  >
+                    Ver Detalles
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Service Item 3 -->
+            <a
+              href="#/servicios/web-ia"
+              class="block h-full scroll-reveal delay-300"
+            >
+              <div
+                class="glass-panel p-8 rounded-xl h-full border border-white/5 hover:border-cyber-blue/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity"
+                ></div>
+                <div class="relative z-10">
+                  <div
+                    class="mb-6 p-4 bg-white/5 rounded-lg w-fit group-hover:bg-white/10 transition-colors"
+                  >
+                    <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2
+                    class="text-2xl font-bold mb-4 group-hover:text-cyber-blue transition-colors"
+                  >
+                    Web + IA
+                  </h2>
+                  <p class="text-gray-400 mb-6 leading-relaxed">
+                    Webs inteligentes que combinan diseño moderno con funciones
+                    avanzadas.
+                  </p>
+                  <div
+                    class="flex items-center text-sm font-bold uppercase tracking-wider text-cyber-blue group-hover:translate-x-2 transition-transform"
+                  >
+                    Ver Detalles
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Service Item 4 -->
+            <a
+              href="#/servicios/mantenimiento"
+              class="block h-full scroll-reveal delay-400"
+            >
+              <div
+                class="glass-panel p-8 rounded-xl h-full border border-white/5 hover:border-cyber-blue/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-600 opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity"
+                ></div>
+                <div class="relative z-10">
+                  <div
+                    class="mb-6 p-4 bg-white/5 rounded-lg w-fit group-hover:bg-white/10 transition-colors"
+                  >
+                    <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+                  </div>
+                  <h2
+                    class="text-2xl font-bold mb-4 group-hover:text-cyber-blue transition-colors"
+                  >
+                    Mantenimiento
+                  </h2>
+                  <p class="text-gray-400 mb-6 leading-relaxed">
+                    Garantizamos el correcto funcionamiento y seguridad de tu
+                    web.
+                  </p>
+                  <div
+                    class="flex items-center text-sm font-bold uppercase tracking-wider text-cyber-blue group-hover:translate-x-2 transition-transform"
+                  >
+                    Ver Detalles
+                    <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: SERVICE DETAIL (Generic Template populated by JS or just static blocks for simplicity) -->
+      <!-- Web Dev Detail -->
+      <section
+        id="page-servicios-desarrollo-web"
+        class="page-section hidden pt-10 pb-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <a
+            href="#/servicios"
+            class="inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors"
+          >
+            <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a
+            Servicios
+          </a>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 scroll-reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue">
+                  <i data-lucide="code" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold font-display">
+                  Desarrollo Web
+                </h1>
+              </div>
+              <p
+                class="text-xl text-gray-400 mb-12 border-l-4 border-cyber-blue pl-6 italic"
+              >
+                WebTech diseña y desarrolla sitios web modernos orientados a
+                ofrecer una imagen profesional.
+              </p>
+              <div class="space-y-8 text-gray-300">
+                <p>
+                  Cada proyecto se realiza a medida, cuidando el diseño y el
+                  rendimiento, garantizando rapidez, accesibilidad y correcta
+                  visualización en cualquier dispositivo.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>Diseño web moderno y profesional</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>Adaptación a móvil, tablet y PC</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>Carga rápida y buen rendimiento</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>SEO básico</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>Formulario de contacto</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"
+                  >
+                    <i
+                      data-lucide="check-circle"
+                      class="text-cyber-blue w-5 h-5"
+                    ></i>
+                    <span>Seguridad básica</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div
+                class="glass-panel p-8 rounded-xl sticky top-24 scroll-reveal delay-200"
+              >
+                <h3 class="text-xl font-bold mb-4">¿Listo para empezar?</h3>
+                <a href="#/contacto" class="block">
+                  <button
+                    class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow"
+                  >
+                    Solicitar Presupuesto
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Detail -->
+      <section
+        id="page-servicios-inteligencia-artificial"
+        class="page-section hidden pt-10 pb-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <a
+            href="#/servicios"
+            class="inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors"
+          >
+            <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a
+            Servicios
+          </a>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 scroll-reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue">
+                  <i data-lucide="brain" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold font-display">
+                  Inteligencia Artificial
+                </h1>
+              </div>
+              <p
+                class="text-xl text-gray-400 mb-12 border-l-4 border-cyber-blue pl-6 italic"
+              >
+                Integración de soluciones de IA para automatizar tareas y
+                mejorar la comunicación.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                <div class="glass-panel p-6 rounded-lg text-center">
+                  <i
+                    data-lucide="bot"
+                    class="w-10 h-10 text-cyber-blue mx-auto mb-4"
+                  ></i>
+                  <h4 class="font-bold mb-2">Chatbots IA</h4>
+                </div>
+                <div class="glass-panel p-6 rounded-lg text-center">
+                  <i
+                    data-lucide="zap"
+                    class="w-10 h-10 text-purple-500 mx-auto mb-4"
+                  ></i>
+                  <h4 class="font-bold mb-2">Automatización</h4>
+                </div>
+                <div class="glass-panel p-6 rounded-lg text-center">
+                  <i
+                    data-lucide="message-square"
+                    class="w-10 h-10 text-pink-500 mx-auto mb-4"
+                  ></i>
+                  <h4 class="font-bold mb-2">Análisis</h4>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div class="glass-panel p-8 rounded-xl sticky top-24">
+                <h3 class="text-xl font-bold mb-4">¿Listo para empezar?</h3>
+                <a href="#/contacto" class="block">
+                  <button
+                    class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow"
+                  >
+                    Solicitar Presupuesto
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Web + IA Detail -->
+      <section
+        id="page-servicios-web-ia"
+        class="page-section hidden pt-10 pb-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <a
+            href="#/servicios"
+            class="inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors"
+          >
+            <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a
+            Servicios
+          </a>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 scroll-reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue">
+                  <i data-lucide="zap" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold font-display">
+                  Web + IA
+                </h1>
+              </div>
+              <p
+                class="text-xl text-gray-400 mb-12 border-l-4 border-cyber-blue pl-6 italic"
+              >
+                El híbrido perfecto: webs inteligentes que combinan diseño
+                moderno con funciones cognitivas.
+              </p>
+              <div
+                class="bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 border border-cyber-blue/20 rounded-xl p-8 my-8"
+              >
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <i data-lucide="cpu" class="text-cyber-blue"></i> ¿Qué
+                  incluye?
+                </h3>
+                <ul class="space-y-3 text-gray-300">
+                  <li class="flex gap-2">
+                    <div class="w-2 h-2 mt-2 rounded-full bg-cyber-blue"></div>
+                    Diseño web profesional
+                  </li>
+                  <li class="flex gap-2">
+                    <div class="w-2 h-2 mt-2 rounded-full bg-cyber-blue"></div>
+                    Chatbot IA integrado
+                  </li>
+                  <li class="flex gap-2">
+                    <div class="w-2 h-2 mt-2 rounded-full bg-cyber-blue"></div>
+                    Respuestas automáticas 24/7
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div class="glass-panel p-8 rounded-xl sticky top-24">
+                <h3 class="text-xl font-bold mb-4">¿Listo para empezar?</h3>
+                <a href="#/contacto" class="block">
+                  <button
+                    class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow"
+                  >
+                    Solicitar Presupuesto
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maintenance Detail -->
+      <section
+        id="page-servicios-mantenimiento"
+        class="page-section hidden pt-10 pb-20"
+      >
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <a
+            href="#/servicios"
+            class="inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors"
+          >
+            <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a
+            Servicios
+          </a>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 scroll-reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue">
+                  <i data-lucide="shield" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold font-display">
+                  Mantenimiento Web
+                </h1>
+              </div>
+              <p
+                class="text-xl text-gray-400 mb-12 border-l-4 border-cyber-blue pl-6 italic"
+              >
+                Garantizamos la estabilidad, seguridad y evolución continua de
+                tu plataforma digital.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                <div class="border border-white/10 p-6 rounded-lg">
+                  <i
+                    data-lucide="refresh-cw"
+                    class="w-8 h-8 text-green-400 mb-4"
+                  ></i>
+                  <h4 class="font-bold mb-2">Actualizaciones</h4>
+                </div>
+                <div class="border border-white/10 p-6 rounded-lg">
+                  <i data-lucide="lock" class="w-8 h-8 text-red-400 mb-4"></i>
+                  <h4 class="font-bold mb-2">Seguridad</h4>
+                </div>
+                <div class="border border-white/10 p-6 rounded-lg">
+                  <i
+                    data-lucide="activity"
+                    class="w-8 h-8 text-blue-400 mb-4"
+                  ></i>
+                  <h4 class="font-bold mb-2">Rendimiento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-1">
+              <div class="glass-panel p-8 rounded-xl sticky top-24">
+                <h3 class="text-xl font-bold mb-4">¿Listo para empezar?</h3>
+                <a href="#/contacto" class="block">
+                  <button
+                    class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow"
+                  >
+                    Solicitar Presupuesto
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: PORTFOLIO -->
+      <section id="page-portfolio" class="page-section hidden pt-10 pb-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="text-center mb-16 scroll-reveal">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+              Nuestro <span class="text-cyber-blue">Trabajo</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Una selección de proyectos donde la tecnología y el diseño
+              convergen.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div
+              class="group relative overflow-hidden rounded-xl aspect-video cursor-pointer scroll-reveal delay-100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=2832&auto=format&fit=crop"
+                alt="Neon Finance"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="text-cyber-blue text-xs font-bold uppercase tracking-widest mb-2 block"
+                  >Web + IA</span
+                >
+                <h3 class="text-2xl font-bold text-white mb-2">Neon Finance</h3>
+                <p
+                  class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"
+                >
+                  Plataforma fintech con asistente financiero.
+                </p>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div
+              class="group relative overflow-hidden rounded-xl aspect-video cursor-pointer scroll-reveal delay-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop"
+                alt="Cyber Health"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="text-cyber-blue text-xs font-bold uppercase tracking-widest mb-2 block"
+                  >Desarrollo Web</span
+                >
+                <h3 class="text-2xl font-bold text-white mb-2">Cyber Health</h3>
+                <p
+                  class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"
+                >
+                  Portal médico con gestión de citas.
+                </p>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div
+              class="group relative overflow-hidden rounded-xl aspect-video cursor-pointer scroll-reveal delay-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2940&auto=format&fit=crop"
+                alt="Nexus"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="text-cyber-blue text-xs font-bold uppercase tracking-widest mb-2 block"
+                  >Desarrollo Web</span
+                >
+                <h3 class="text-2xl font-bold text-white mb-2">
+                  Nexus Architecture
+                </h3>
+                <p
+                  class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"
+                >
+                  Portfolio inmersivo para estudio.
+                </p>
+              </div>
+            </div>
+            <!-- Project 4 -->
+            <div
+              class="group relative overflow-hidden rounded-xl aspect-video cursor-pointer scroll-reveal delay-400"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2806&auto=format&fit=crop"
+                alt="AutoBot"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="text-cyber-blue text-xs font-bold uppercase tracking-widest mb-2 block"
+                  >Inteligencia Artificial</span
+                >
+                <h3 class="text-2xl font-bold text-white mb-2">
+                  AutoBot Support
+                </h3>
+                <p
+                  class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"
+                >
+                  Sistema de atención autónomo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: ABOUT -->
+      <section id="page-nosotros" class="page-section hidden pt-10 pb-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 font-display">
+              Sobre <span class="text-cyber-blue">WebTech</span>
+            </h1>
+            <div class="text-xl text-gray-300 leading-relaxed mb-12 space-y-6">
+              <p>
+                En WebTech – Desarrollo Web somos una empresa especializada en
+                el desarrollo de soluciones web modernas orientadas a pequeñas y
+                medianas empresas. Nacemos con el objetivo de ayudar a los
+                negocios a mejorar su presencia digital, optimizar sus procesos
+                y ofrecer una mejor experiencia a sus clientes a través de la
+                tecnología.
+              </p>
+              <p>
+                Diseñamos y desarrollamos páginas web y aplicaciones web a
+                medida, cuidando tanto el diseño como el rendimiento y la
+                usabilidad. Creemos que una web no debe ser solo atractiva, sino
+                una herramienta funcional que aporte valor real al negocio,
+                facilite la comunicación con los clientes y ayude a alcanzar
+                objetivos concretos.
+              </p>
+              <p>
+                Uno de nuestros principales valores diferenciales es la
+                integración práctica de la inteligencia artificial en proyectos
+                web. Aplicamos soluciones como chatbots, automatización de
+                respuestas y asistentes inteligentes de forma sencilla y útil,
+                siempre adaptadas a las necesidades reales de cada empresa.
+                Nuestro enfoque no es complicar, sino hacer que la tecnología
+                trabaje de forma eficiente y comprensible.
+              </p>
+              <p>
+                Además, ofrecemos servicios de mantenimiento y mejora continua,
+                garantizando que cada proyecto se mantenga actualizado, seguro y
+                en perfecto funcionamiento con el paso del tiempo. Acompañamos a
+                nuestros clientes desde la idea inicial hasta la evolución del
+                proyecto, estableciendo relaciones basadas en la confianza, la
+                cercanía y la transparencia.
+              </p>
+              <p>
+                En WebTech apostamos por la calidad, la innovación tecnológica y
+                un trato claro y cercano, evitando tecnicismos innecesarios y
+                explicando cada paso del proceso. Nuestro compromiso es ofrecer
+                soluciones web estables, escalables y adaptadas al crecimiento
+                de cada negocio, convirtiéndonos en un socio tecnológico a largo
+                plazo.
+              </p>
+            </div>
+
+            <!-- NEW: Stats -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-white/5"
+            >
+              <div>
+                <div
+                  class="text-4xl font-bold text-cyber-blue mb-2 font-display"
+                >
+                  50+
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Proyectos
+                </div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold text-purple-500 mb-2 font-display"
+                >
+                  99%
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Satisfacción
+                </div>
+              </div>
+              <div>
+                <div class="text-4xl font-bold text-pink-500 mb-2 font-display">
+                  24/7
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Soporte IA
+                </div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold text-green-500 mb-2 font-display"
+                >
+                  100%
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest">
+                  Compromiso
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Values Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div
+              class="glass-panel p-8 rounded-xl text-center border-t-4 border-cyber-blue scroll-reveal delay-100"
+            >
+              <i
+                data-lucide="lightbulb"
+                class="w-12 h-12 text-cyber-blue mx-auto mb-6"
+              ></i>
+              <h3 class="text-xl font-bold mb-4">Innovación</h3>
+              <p class="text-gray-400 text-sm">
+                Adoptamos tecnologías emergentes antes de que sean tendencia.
+              </p>
+            </div>
+            <div
+              class="glass-panel p-8 rounded-xl text-center border-t-4 border-purple-500 scroll-reveal delay-200"
+            >
+              <i
+                data-lucide="target"
+                class="w-12 h-12 text-purple-500 mx-auto mb-6"
+              ></i>
+              <h3 class="text-xl font-bold mb-4">Precisión</h3>
+              <p class="text-gray-400 text-sm">
+                Código limpio, arquitectura sólida y diseño pixel-perfect.
+              </p>
+            </div>
+            <div
+              class="glass-panel p-8 rounded-xl text-center border-t-4 border-pink-500 scroll-reveal delay-300"
+            >
+              <i
+                data-lucide="users"
+                class="w-12 h-12 text-pink-500 mx-auto mb-6"
+              ></i>
+              <h3 class="text-xl font-bold mb-4">Colaboración</h3>
+              <p class="text-gray-400 text-sm">
+                Trabajamos codo a codo contigo para materializar tu visión.
+              </p>
+            </div>
+          </div>
+
+          <!-- NEW: The Team -->
+          <div class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center font-display">
+              Los <span class="text-cyber-blue">Arquitectos</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Team Member 1 -->
+              <div
+                class="group relative overflow-hidden rounded-xl bg-white/5 scroll-reveal delay-100"
+              >
+                <div class="aspect-square bg-gray-800 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    alt="CEO"
+                  />
+                  <div
+                    class="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                  ></div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">Alex Chen</h3>
+                  <p
+                    class="text-cyber-blue text-sm uppercase tracking-wider mb-4"
+                  >
+                    Lead Developer
+                  </p>
+                  <p class="text-gray-400 text-sm">
+                    Especialista en arquitecturas escalables y React.
+                  </p>
+                </div>
+              </div>
+              <!-- Team Member 2 -->
+              <div
+                class="group relative overflow-hidden rounded-xl bg-white/5 scroll-reveal delay-200"
+              >
+                <div class="aspect-square bg-gray-800 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2788&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    alt="CTO"
+                  />
+                  <div
+                    class="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                  ></div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">Sarah Connor</h3>
+                  <p
+                    class="text-purple-500 text-sm uppercase tracking-wider mb-4"
+                  >
+                    AI Engineer
+                  </p>
+                  <p class="text-gray-400 text-sm">
+                    Experta en redes neuronales y automatización.
+                  </p>
+                </div>
+              </div>
+              <!-- Team Member 3 -->
+              <div
+                class="group relative overflow-hidden rounded-xl bg-white/5 scroll-reveal delay-300"
+              >
+                <div class="aspect-square bg-gray-800 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2787&auto=format&fit=crop"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    alt="Designer"
+                  />
+                  <div
+                    class="absolute inset-0 bg-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                  ></div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">David Neo</h3>
+                  <p
+                    class="text-pink-500 text-sm uppercase tracking-wider mb-4"
+                  >
+                    UX/UI Designer
+                  </p>
+                  <p class="text-gray-400 text-sm">
+                    Visionario del diseño de interfaces futuristas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: CONTACT -->
+      <section id="page-contacto" class="page-section hidden pt-10 pb-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div class="scroll-reveal">
+              <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+                Creemos el <br /><span class="text-cyber-blue"
+                  >Futuro Juntos</span
+                >
+              </h1>
+              <p class="text-gray-400 mb-12 text-lg">
+                ¿Tienes un proyecto en mente? Estamos listos para escucharte.
+              </p>
+              <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                  <div class="p-3 bg-white/5 rounded-lg">
+                    <i data-lucide="mail" class="text-cyber-blue w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white mb-1">Email</h3>
+                    <p class="text-gray-400">hello@webtech.agency</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="p-3 bg-white/5 rounded-lg">
+                    <i data-lucide="phone" class="text-cyber-blue w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white mb-1">Teléfono</h3>
+                    <p class="text-gray-400">+34 900 123 456</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="glass-panel p-8 rounded-2xl border border-cyber-blue/20 scroll-reveal delay-200"
+            >
+              <form
+                action="https://formspree.io/f/xykdkyen"
+                method="POST"
+                class="space-y-6"
+              >
+                <div>
+                  <label
+                    class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide"
+                  >
+                    Nombre
+                  </label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    required
+                    class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-cyber-blue outline-none transition-all"
+                    placeholder="Tu nombre"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-cyber-blue outline-none transition-all"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide"
+                  >
+                    Mensaje
+                  </label>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full bg-black/50 border border-white/10 rounded-lg p-4 text-white focus:border-cyber-blue outline-none transition-all"
+                    placeholder="Cuéntanos sobre tu proyecto..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full px-6 py-4 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow flex justify-center items-center gap-2"
+                >
+                  Enviar Mensaje <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-cyber-black border-t border-white/5 pt-16 pb-8 relative z-10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div class="col-span-1 md:col-span-1">
+            <a href="#/" class="flex items-center gap-2 mb-4">
+              <i data-lucide="cpu" class="w-6 h-6 text-cyber-blue"></i>
+              <span
+                class="text-xl font-bold tracking-tighter text-white font-display"
+              >
+                WEB<span class="text-cyber-blue">TECH</span>
+              </span>
+            </a>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Construyendo el futuro digital.
+            </p>
+          </div>
+          <div>
+            <h3
+              class="text-white font-bold mb-4 uppercase tracking-wider text-sm"
+            >
+              Servicios
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="#/servicios/desarrollo-web"
+                  class="hover:text-cyber-blue transition-colors"
+                  >Desarrollo Web</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#/servicios/inteligencia-artificial"
+                  class="hover:text-cyber-blue transition-colors"
+                  >Inteligencia Artificial</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-white font-bold mb-4 uppercase tracking-wider text-sm"
+            >
+              Empresa
+            </h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="#/nosotros"
+                  class="hover:text-cyber-blue transition-colors"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#/portfolio"
+                  class="hover:text-cyber-blue transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-white font-bold mb-4 uppercase tracking-wider text-sm"
+            >
+              Conectar
+            </h3>
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-400 hover:text-cyber-blue">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p className="text-xs text-gray-500">© 2025 WebTech Agency.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="main.js"></script>
+  </body>
+</html>

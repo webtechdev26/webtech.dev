@@ -1,0 +1,56 @@
+/* Custom Styles & Animations */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020205;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Glow Effects */
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.box-glow {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.btn-glow {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+.btn-glow:hover {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: rgba(10, 10, 18, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
