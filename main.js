@@ -413,19 +413,24 @@ function setLang(lang) {
 }
 
 // Abrir/cerrar dropdown
-document.addEventListener('click', function (e) {
-  const langBtn = document.getElementById('lang-btn');
-  const langMenu = document.getElementById('lang-menu');
-  const langChevron = document.getElementById('lang-chevron');
+const langBtn = document.getElementById('lang-btn');
+const langMenu = document.getElementById('lang-menu');
+const langChevron = document.getElementById('lang-chevron');
 
-  if (!langBtn || !langMenu) return;
-
-  if (langBtn.contains(e.target)) {
+if (langBtn) {
+  langBtn.addEventListener('click', function (e) {
     e.stopPropagation();
     langMenu.classList.toggle('hidden');
     langChevron.style.transform = langMenu.classList.contains('hidden') ? '' : 'rotate(180deg)';
-  } else if (!langMenu.contains(e.target)) {
-    langMenu.classList.add('hidden');
-    langChevron.style.transform = '';
+  });
+}
+
+// Cerrar al hacer click fuera
+document.addEventListener('click', function (e) {
+  if (langMenu && !langMenu.classList.contains('hidden')) {
+    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+      langChevron.style.transform = '';
+    }
   }
 });
