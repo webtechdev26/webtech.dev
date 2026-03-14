@@ -224,3 +224,208 @@ function draw() {
 window.addEventListener('resize', resize);
 resize();
 draw();
+
+// --- LANGUAGE SWITCHER ---
+const translations = {
+  es: {
+    nav_servicios: 'Servicios',
+    nav_portfolio: 'Portfolio',
+    nav_nosotros: 'Nosotros',
+    nav_start: 'Start Project',
+    hero_badge: 'Innovación Digital 2026',
+    hero_title1: 'CONSTRUIMOS TU',
+    hero_title2: 'FUTURO DIGITAL',
+    hero_sub: 'Fusionamos desarrollo web de vanguardia con inteligencia artificial para crear experiencias digitales que transforman negocios.',
+    hero_btn1: 'Solicitar Presupuesto',
+    hero_btn2: 'Explorar Servicios',
+    contact_badge: 'Hablemos',
+    contact_title1: 'Creemos el',
+    contact_title2: 'Futuro Juntos',
+    contact_sub: '¿Tienes un proyecto en mente? Cuéntanos y te respondemos en menos de 24h.',
+    contact_btn: 'Enviar Mensaje',
+    contact_success_title: '¡Mensaje enviado!',
+    contact_success_sub: 'Gracias por contactarnos. Te responderemos en menos de 24 horas.',
+    contact_success_btn: 'Enviar otro mensaje',
+    form_nombre: 'Nombre *',
+    form_telefono: 'Teléfono',
+    form_email: 'Email *',
+    form_servicio: 'Servicio *',
+    form_plan: 'Plan *',
+    form_mensaje: 'Mensaje *',
+    form_placeholder_nombre: 'Tu nombre',
+    form_placeholder_telefono: '+34 600 000 000',
+    form_placeholder_email: 'tu@email.com',
+    form_placeholder_servicio: 'Selecciona un servicio...',
+    form_placeholder_plan: 'Selecciona un plan...',
+    form_placeholder_mensaje: 'Cuéntanos sobre tu proyecto...',
+  },
+  en: {
+    nav_servicios: 'Services',
+    nav_portfolio: 'Portfolio',
+    nav_nosotros: 'About',
+    nav_start: 'Start Project',
+    hero_badge: 'Digital Innovation 2026',
+    hero_title1: 'WE BUILD YOUR',
+    hero_title2: 'DIGITAL FUTURE',
+    hero_sub: 'We merge cutting-edge web development with artificial intelligence to create digital experiences that transform businesses.',
+    hero_btn1: 'Request a Quote',
+    hero_btn2: 'Explore Services',
+    contact_badge: "Let's Talk",
+    contact_title1: "Let's Build the",
+    contact_title2: 'Future Together',
+    contact_sub: 'Have a project in mind? Tell us and we will get back to you within 24h.',
+    contact_btn: 'Send Message',
+    contact_success_title: 'Message sent!',
+    contact_success_sub: 'Thank you for reaching out. We will reply within 24 hours.',
+    contact_success_btn: 'Send another message',
+    form_nombre: 'Name *',
+    form_telefono: 'Phone',
+    form_email: 'Email *',
+    form_servicio: 'Service *',
+    form_plan: 'Plan *',
+    form_mensaje: 'Message *',
+    form_placeholder_nombre: 'Your name',
+    form_placeholder_telefono: '+34 600 000 000',
+    form_placeholder_email: 'you@email.com',
+    form_placeholder_servicio: 'Select a service...',
+    form_placeholder_plan: 'Select a plan...',
+    form_placeholder_mensaje: 'Tell us about your project...',
+  },
+  ca: {
+    nav_servicios: 'Serveis',
+    nav_portfolio: 'Portfolio',
+    nav_nosotros: 'Nosaltres',
+    nav_start: 'Start Project',
+    hero_badge: 'Innovació Digital 2026',
+    hero_title1: 'CONSTRUÏM EL TEU',
+    hero_title2: 'FUTUR DIGITAL',
+    hero_sub: 'Fusionem desenvolupament web d\'avantguarda amb intel·ligència artificial per crear experiències digitals que transformen negocis.',
+    hero_btn1: 'Sol·licitar Pressupost',
+    hero_btn2: 'Explorar Serveis',
+    contact_badge: 'Parlem',
+    contact_title1: 'Creem el',
+    contact_title2: 'Futur Junts',
+    contact_sub: 'Tens un projecte en ment? Explica\'ns-ho i et responem en menys de 24h.',
+    contact_btn: 'Enviar Missatge',
+    contact_success_title: 'Missatge enviat!',
+    contact_success_sub: 'Gràcies per contactar-nos. Et respondrem en menys de 24 hores.',
+    contact_success_btn: 'Enviar un altre missatge',
+    form_nombre: 'Nom *',
+    form_telefono: 'Telèfon',
+    form_email: 'Email *',
+    form_servicio: 'Servei *',
+    form_plan: 'Pla *',
+    form_mensaje: 'Missatge *',
+    form_placeholder_nombre: 'El teu nom',
+    form_placeholder_telefono: '+34 600 000 000',
+    form_placeholder_email: 'tu@email.com',
+    form_placeholder_servicio: 'Selecciona un servei...',
+    form_placeholder_plan: 'Selecciona un pla...',
+    form_placeholder_mensaje: 'Explica\'ns el teu projecte...',
+  }
+};
+
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+
+  // Actualizar badge del idioma actual
+  document.getElementById('lang-current').textContent = lang.toUpperCase();
+
+  // Resaltar opción activa
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.classList.remove('text-cyber-blue');
+    btn.classList.add('text-gray-400');
+  });
+  const activeBtn = document.getElementById('lang-' + lang);
+  if (activeBtn) {
+    activeBtn.classList.add('text-cyber-blue');
+    activeBtn.classList.remove('text-gray-400');
+  }
+
+  // Navbar
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === '#/servicios') link.textContent = t.nav_servicios;
+    if (href === '#/portfolio') link.textContent = t.nav_portfolio;
+    if (href === '#/nosotros') link.textContent = t.nav_nosotros;
+  });
+
+  // Hero
+  const heroBadge = document.querySelector('#page-home .scroll-reveal span');
+  if (heroBadge) heroBadge.textContent = t.hero_badge;
+
+  const heroLines = document.querySelectorAll('#page-home h1');
+  if (heroLines[0]) {
+    heroLines[0].innerHTML = `${t.hero_title1} <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow">${t.hero_title2}</span>`;
+  }
+
+  const heroSub = document.querySelector('#page-home .scroll-reveal p');
+  if (heroSub) heroSub.textContent = t.hero_sub;
+
+  // Contacto
+  const contactBadge = document.querySelector('#page-contacto span.text-cyber-blue');
+  if (contactBadge) contactBadge.textContent = t.contact_badge;
+
+  const contactTitle = document.querySelector('#page-contacto h1');
+  if (contactTitle) {
+    contactTitle.innerHTML = `${t.contact_title1} <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow">${t.contact_title2}</span>`;
+  }
+
+  const contactSub = document.querySelector('#page-contacto .scroll-reveal p');
+  if (contactSub) contactSub.textContent = t.contact_sub;
+
+  // Formulario labels
+  const labels = document.querySelectorAll('#contact-form label');
+  const labelKeys = ['form_nombre', 'form_telefono', 'form_email', 'form_servicio', 'form_mensaje'];
+  labels.forEach((label, i) => {
+    if (labelKeys[i]) label.textContent = t[labelKeys[i]];
+  });
+
+  // Placeholders
+  const inputNombre = document.querySelector('#contact-form input[name="nombre"]');
+  const inputTel = document.querySelector('#contact-form input[name="telefono"]');
+  const inputEmail = document.querySelector('#contact-form input[name="email"]');
+  const inputMsg = document.querySelector('#contact-form textarea');
+  if (inputNombre) inputNombre.placeholder = t.form_placeholder_nombre;
+  if (inputTel) inputTel.placeholder = t.form_placeholder_telefono;
+  if (inputEmail) inputEmail.placeholder = t.form_placeholder_email;
+  if (inputMsg) inputMsg.placeholder = t.form_placeholder_mensaje;
+
+  // Botón enviar
+  const btnText = document.getElementById('btn-text');
+  if (btnText) btnText.textContent = t.contact_btn;
+
+  // Mensaje éxito
+  const successTitle = document.querySelector('#success-msg h3');
+  const successSub = document.querySelector('#success-msg p');
+  const successBtn = document.querySelector('#success-msg button');
+  if (successTitle) successTitle.textContent = t.contact_success_title;
+  if (successSub) successSub.textContent = t.contact_success_sub;
+  if (successBtn) successBtn.textContent = t.contact_success_btn;
+
+  // Cerrar dropdown
+  document.getElementById('lang-menu').classList.add('hidden');
+  document.getElementById('lang-chevron').style.transform = '';
+}
+
+// Abrir/cerrar dropdown
+document.getElementById('lang-btn').addEventListener('click', function (e) {
+  e.stopPropagation();
+  const menu = document.getElementById('lang-menu');
+  const chevron = document.getElementById('lang-chevron');
+  menu.classList.toggle('hidden');
+  chevron.style.transform = menu.classList.contains('hidden') ? '' : 'rotate(180deg)';
+});
+
+// Cerrar al hacer click fuera
+document.addEventListener('click', function () {
+  const menu = document.getElementById('lang-menu');
+  if (menu) {
+    menu.classList.add('hidden');
+    document.getElementById('lang-chevron').style.transform = '';
+  }
+});
