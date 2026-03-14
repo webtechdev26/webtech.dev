@@ -412,25 +412,3 @@ function setLang(lang) {
   document.getElementById('lang-chevron').style.transform = '';
 }
 
-// Abrir/cerrar dropdown
-const langBtn = document.getElementById('lang-btn');
-const langMenu = document.getElementById('lang-menu');
-const langChevron = document.getElementById('lang-chevron');
-
-if (langBtn) {
-  langBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    langMenu.classList.toggle('hidden');
-    langChevron.style.transform = langMenu.classList.contains('hidden') ? '' : 'rotate(180deg)';
-  });
-}
-
-// Cerrar al hacer click fuera
-document.addEventListener('click', function (e) {
-  if (langMenu && !langMenu.classList.contains('hidden')) {
-    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-      langMenu.classList.add('hidden');
-      langChevron.style.transform = '';
-    }
-  }
-});
