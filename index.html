@@ -1443,7 +1443,6 @@
         <p class="text-gray-400 mb-12 text-lg">
           ¿Tienes un proyecto en mente? Cuéntanos y te respondemos en menos de 24h.
         </p>
-
         <div class="space-y-6">
           <div class="flex items-center gap-4 group">
             <div class="p-4 bg-white/5 rounded-xl border border-white/10 group-hover:border-cyber-blue/50 group-hover:bg-cyber-blue/5 transition-all duration-300">
@@ -1481,7 +1480,7 @@
           <div class="absolute top-0 right-0 w-40 h-40 bg-cyber-blue/5 blur-3xl rounded-full"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-cyber-purple/5 blur-3xl rounded-full"></div>
 
-          <!-- Formulario normal (visible por defecto) -->
+          <!-- Formulario -->
           <form
             id="contact-form"
             action="https://formspree.io/f/xykdkyen"
@@ -1523,33 +1522,36 @@
               />
             </div>
 
-            <!-- Selector de servicio -->
-            <div>
-              <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">Servicio de interés *</label>
-              <select
-                name="servicio"
-                required
-                class="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white focus:border-cyber-blue outline-none transition-all hover:border-white/20 appearance-none cursor-pointer"
-              >
-                <option value="" disabled selected class="text-gray-600">Selecciona un servicio...</option>
-                <optgroup label="Desarrollo Web">
-                  <option value="Web Esencial">Desarrollo Web Esencial</option>
-                  <option value="Web Pro">Desarrollo Web Pro</option>
-                  <option value="Web Premium">Desarrollo Web Premium</option>
-                </optgroup>
-                <optgroup label="Inteligencia Artificial">
-                  <option value="Chatbot IA">Chatbot IA</option>
-                </optgroup>
-                <optgroup label="Web + IA">
-                  <option value="Web Esencial + Chatbot">Web Esencial + Chatbot</option>
-                  <option value="Web Pro + Chatbot">Web Pro + Chatbot</option>
-                  <option value="Web Premium + Chatbot">Web Premium + Chatbot</option>
-                </optgroup>
-                <optgroup label="Otros">
-                  <option value="Mantenimiento">Mantenimiento Web</option>
-                  <option value="Otro">Otro / No sé aún</option>
-                </optgroup>
-              </select>
+            <!-- Selectores de servicio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">Servicio *</label>
+                <select
+                  name="categoria"
+                  id="select-categoria"
+                  required
+                  class="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white focus:border-cyber-blue outline-none transition-all hover:border-white/20 appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>Selecciona un servicio...</option>
+                  <option value="desarrollo-web">Desarrollo Web</option>
+                  <option value="inteligencia-artificial">Inteligencia Artificial</option>
+                  <option value="web-ia">Web + IA</option>
+                  <option value="mantenimiento">Mantenimiento</option>
+                </select>
+              </div>
+
+              <!-- Subservicio (oculto hasta elegir categoría) -->
+              <div id="subservicio-wrapper" class="hidden">
+                <label class="block text-xs font-bold text-gray-400 mb-2 uppercase tracking-widest">Plan *</label>
+                <select
+                  name="servicio"
+                  id="select-subservicio"
+                  required
+                  class="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-white focus:border-cyber-blue outline-none transition-all hover:border-white/20 appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>Selecciona un plan...</option>
+                </select>
+              </div>
             </div>
 
             <!-- Mensaje -->
@@ -1572,7 +1574,6 @@
             >
               <span id="btn-text">Enviar Mensaje</span>
               <i data-lucide="send" class="w-4 h-4" id="btn-icon"></i>
-              <!-- Spinner (oculto por defecto) -->
               <svg id="btn-spinner" class="hidden animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
@@ -1580,7 +1581,7 @@
             </button>
           </form>
 
-          <!-- Mensaje de éxito (oculto por defecto) -->
+          <!-- Mensaje de éxito -->
           <div id="success-msg" class="hidden relative z-10 text-center py-12">
             <div class="w-20 h-20 mx-auto mb-6 bg-green-500/10 rounded-full flex items-center justify-center border border-green-500/30">
               <i data-lucide="check" class="w-10 h-10 text-green-400"></i>
@@ -1588,7 +1589,7 @@
             <h3 class="text-2xl font-bold text-white mb-3 font-display">¡Mensaje enviado!</h3>
             <p class="text-gray-400 mb-8">Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
             <button
-              onclick="document.getElementById('success-msg').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden'); document.getElementById('contact-form').reset();"
+              onclick="document.getElementById('success-msg').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden'); document.getElementById('contact-form').reset(); document.getElementById('subservicio-wrapper').classList.add('hidden');"
               class="px-6 py-3 text-sm font-bold uppercase tracking-wider border border-white/20 text-gray-400 hover:border-cyber-blue hover:text-cyber-blue transition-all duration-300 rounded-xl"
             >
               Enviar otro mensaje

@@ -3,39 +3,35 @@ lucide.createIcons();
 
 // --- ROUTER LOGIC ---
 function router() {
-  lucide.createIcons();
   const hash = window.location.hash || '#/';
   const cleanHash = hash.replace('#', '');
-  
-  // Hide all sections
+
   document.querySelectorAll('.page-section').forEach(section => {
     section.classList.add('hidden');
   });
 
-  // Determine which section to show
   let sectionId = 'page-home';
-  
+
   if (cleanHash === '/' || cleanHash === '') sectionId = 'page-home';
   else if (cleanHash === '/servicios') sectionId = 'page-servicios';
   else if (cleanHash === '/portfolio') sectionId = 'page-portfolio';
   else if (cleanHash === '/nosotros') sectionId = 'page-nosotros';
   else if (cleanHash === '/contacto') sectionId = 'page-contacto';
   else {
-    // Handle sub-pages like /servicios/desarrollo-web -> page-servicios-desarrollo-web
     const subPageId = 'page-' + cleanHash.substring(1).replace(/\//g, '-');
     if (document.getElementById(subPageId)) {
       sectionId = subPageId;
     }
   }
 
-  // Show the target section
   const targetSection = document.getElementById(sectionId);
   if (targetSection) {
     targetSection.classList.remove('hidden');
     window.scrollTo(0, 0);
   }
 
-  // Update Active Link in Navbar
+  lucide.createIcons();
+
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('text-cyber-blue');
     link.classList.add('text-gray-400');
@@ -45,11 +41,9 @@ function router() {
     }
   });
 
-  // Re-trigger scroll animations
   initScrollObserver();
 }
 
-// Listen for hash changes
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
 
@@ -61,14 +55,13 @@ mobileBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
   });
 });
 
-// --- SCROLL ANIMATIONS (Intersection Observer) ---
+// --- SCROLL ANIMATIONS ---
 function initScrollObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -80,6 +73,90 @@ function initScrollObserver() {
 
   document.querySelectorAll('.scroll-reveal').forEach(el => {
     observer.observe(el);
+  });
+}
+
+// --- SELECTOR DE SERVICIOS DINÁMICO ---
+const subservicios = {
+  'desarrollo-web': [
+    { value: 'Web Esencial', label: 'Desarrollo Web Esencial' },
+    { value: 'Web Pro', label: 'Desarrollo Web Pro' },
+    { value: 'Web Premium', label: 'Desarrollo Web Premium' },
+  ],
+  'inteligencia-artificial': [
+    { value: 'Chatbot IA', label: 'Chatbot IA' },
+  ],
+  'web-ia': [
+    { value: 'Web Esencial + Chatbot', label: 'Web Esencial + Chatbot' },
+    { value: 'Web Pro + Chatbot', label: 'Web Pro + Chatbot' },
+    { value: 'Web Premium + Chatbot', label: 'Web Premium + Chatbot' },
+  ],
+  'mantenimiento': [
+    { value: 'Mantenimiento Web', label: 'Mantenimiento Web' },
+  ],
+};
+
+const selectCategoria = document.getElementById('select-categoria');
+const selectSubservicio = document.getElementById('select-subservicio');
+const subservicioWrapper = document.getElementById('subservicio-wrapper');
+
+if (selectCategoria) {
+  selectCategoria.addEventListener('change', function () {
+    const opciones = subservicios[this.value] || [];
+
+    selectSubservicio.innerHTML = '<option value="" disabled selected>Selecciona un plan...</option>';
+    opciones.forEach(op => {
+      const option = document.createElement('option');
+      option.value = op.value;
+      option.textContent = op.label;
+      selectSubservicio.appendChild(option);
+    });
+
+    subservicioWrapper.classList.remove('hidden');
+
+    if (opciones.length === 1) {
+      selectSubservicio.value = opciones[0].value;
+    }
+  });
+}
+
+// --- CONTACT FORM ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const btnSpinner = document.getElementById('btn-spinner');
+
+    btn.disabled = true;
+    btnText.textContent = 'Enviando...';
+    btnIcon.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        contactForm.classList.add('hidden');
+        const successMsg = document.getElementById('success-msg');
+        successMsg.classList.remove('hidden');
+        lucide.createIcons();
+      } else {
+        throw new Error('Error al enviar');
+      }
+    } catch (err) {
+      btnText.textContent = 'Error, inténtalo de nuevo';
+      btnIcon.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+      btn.disabled = false;
+    }
   });
 }
 
@@ -97,7 +174,7 @@ function resize() {
 function initParticles() {
   particles = [];
   const particleCount = Math.min(window.innerWidth / 10, 100);
-  
+
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * canvas.width,
@@ -112,8 +189,7 @@ function initParticles() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Draw connections
+
   ctx.lineWidth = 0.5;
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
@@ -131,7 +207,6 @@ function draw() {
     }
   }
 
-  // Draw particles
   particles.forEach((p) => {
     p.x += p.vx;
     p.y += p.vy;
@@ -151,45 +226,3 @@ function draw() {
 window.addEventListener('resize', resize);
 resize();
 draw();
-
-// --- CONTACT FORM ---
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const btn = document.getElementById('submit-btn');
-    const btnText = document.getElementById('btn-text');
-    const btnIcon = document.getElementById('btn-icon');
-    const btnSpinner = document.getElementById('btn-spinner');
-
-    // Estado cargando
-    btn.disabled = true;
-    btnText.textContent = 'Enviando...';
-    btnIcon.classList.add('hidden');
-    btnSpinner.classList.remove('hidden');
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' }
-      });
-
-      if (response.ok) {
-        // Mostrar éxito
-        contactForm.classList.add('hidden');
-        const successMsg = document.getElementById('success-msg');
-        successMsg.classList.remove('hidden');
-        lucide.createIcons();
-      } else {
-        throw new Error('Error al enviar');
-      }
-    } catch (err) {
-      btnText.textContent = 'Error, inténtalo de nuevo';
-      btnIcon.classList.remove('hidden');
-      btnSpinner.classList.add('hidden');
-      btn.disabled = false;
-    }
-  });
-}
