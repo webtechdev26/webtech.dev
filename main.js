@@ -3,6 +3,7 @@ lucide.createIcons();
 
 // --- ROUTER LOGIC ---
 function router() {
+  lucide.createIcons();
   const hash = window.location.hash || '#/';
   const cleanHash = hash.replace('#', '');
   
