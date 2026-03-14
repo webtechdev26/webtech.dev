@@ -413,19 +413,19 @@ function setLang(lang) {
 }
 
 // Abrir/cerrar dropdown
-document.getElementById('lang-btn').addEventListener('click', function (e) {
-  e.stopPropagation();
-  const menu = document.getElementById('lang-menu');
-  const chevron = document.getElementById('lang-chevron');
-  menu.classList.toggle('hidden');
-  chevron.style.transform = menu.classList.contains('hidden') ? '' : 'rotate(180deg)';
-});
+document.addEventListener('click', function (e) {
+  const langBtn = document.getElementById('lang-btn');
+  const langMenu = document.getElementById('lang-menu');
+  const langChevron = document.getElementById('lang-chevron');
 
-// Cerrar al hacer click fuera
-document.addEventListener('click', function () {
-  const menu = document.getElementById('lang-menu');
-  if (menu) {
-    menu.classList.add('hidden');
-    document.getElementById('lang-chevron').style.transform = '';
+  if (!langBtn || !langMenu) return;
+
+  if (langBtn.contains(e.target)) {
+    e.stopPropagation();
+    langMenu.classList.toggle('hidden');
+    langChevron.style.transform = langMenu.classList.contains('hidden') ? '' : 'rotate(180deg)';
+  } else if (!langMenu.contains(e.target)) {
+    langMenu.classList.add('hidden');
+    langChevron.style.transform = '';
   }
 });
