@@ -151,3 +151,45 @@ function draw() {
 window.addEventListener('resize', resize);
 resize();
 draw();
+
+// --- CONTACT FORM ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const btnSpinner = document.getElementById('btn-spinner');
+
+    // Estado cargando
+    btn.disabled = true;
+    btnText.textContent = 'Enviando...';
+    btnIcon.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (response.ok) {
+        // Mostrar éxito
+        contactForm.classList.add('hidden');
+        const successMsg = document.getElementById('success-msg');
+        successMsg.classList.remove('hidden');
+        lucide.createIcons();
+      } else {
+        throw new Error('Error al enviar');
+      }
+    } catch (err) {
+      btnText.textContent = 'Error, inténtalo de nuevo';
+      btnIcon.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+      btn.disabled = false;
+    }
+  });
+}
