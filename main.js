@@ -77,32 +77,30 @@ function initScrollObserver() {
 }
 
 // --- SELECTOR DE SERVICIOS DINÁMICO ---
-const subservicios = {
-  'desarrollo-web': [
-    { value: 'Web Esencial', label: 'Desarrollo Web Esencial' },
-    { value: 'Web Pro', label: 'Desarrollo Web Pro' },
-    { value: 'Web Premium', label: 'Desarrollo Web Premium' },
-  ],
-  'inteligencia-artificial': [
-    { value: 'Chatbot IA', label: 'Chatbot IA' },
-  ],
-  'web-ia': [
-    { value: 'Web Esencial + Chatbot', label: 'Web Esencial + Chatbot' },
-    { value: 'Web Pro + Chatbot', label: 'Web Pro + Chatbot' },
-    { value: 'Web Premium + Chatbot', label: 'Web Premium + Chatbot' },
-  ],
-  'mantenimiento': [
-    { value: 'Mantenimiento Web', label: 'Mantenimiento Web' },
-  ],
-};
+document.addEventListener('change', function (e) {
+  if (e.target && e.target.id === 'select-categoria') {
+    const subservicios = {
+      'desarrollo-web': [
+        { value: 'Web Esencial', label: 'Desarrollo Web Esencial' },
+        { value: 'Web Pro', label: 'Desarrollo Web Pro' },
+        { value: 'Web Premium', label: 'Desarrollo Web Premium' },
+      ],
+      'inteligencia-artificial': [
+        { value: 'Chatbot IA', label: 'Chatbot IA' },
+      ],
+      'web-ia': [
+        { value: 'Web Esencial + Chatbot', label: 'Web Esencial + Chatbot' },
+        { value: 'Web Pro + Chatbot', label: 'Web Pro + Chatbot' },
+        { value: 'Web Premium + Chatbot', label: 'Web Premium + Chatbot' },
+      ],
+      'mantenimiento': [
+        { value: 'Mantenimiento Web', label: 'Mantenimiento Web' },
+      ],
+    };
 
-const selectCategoria = document.getElementById('select-categoria');
-const selectSubservicio = document.getElementById('select-subservicio');
-const subservicioWrapper = document.getElementById('subservicio-wrapper');
-
-if (selectCategoria) {
-  selectCategoria.addEventListener('change', function () {
-    const opciones = subservicios[this.value] || [];
+    const opciones = subservicios[e.target.value] || [];
+    const selectSubservicio = document.getElementById('select-subservicio');
+    const subservicioWrapper = document.getElementById('subservicio-wrapper');
 
     selectSubservicio.innerHTML = '<option value="" disabled selected>Selecciona un plan...</option>';
     opciones.forEach(op => {
@@ -117,8 +115,8 @@ if (selectCategoria) {
     if (opciones.length === 1) {
       selectSubservicio.value = opciones[0].value;
     }
-  });
-}
+  }
+});
 
 // --- CONTACT FORM ---
 const contactForm = document.getElementById('contact-form');
