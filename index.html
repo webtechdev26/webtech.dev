@@ -154,316 +154,275 @@
 
     <!-- Main Content Area -->
     <main class="pt-20 min-h-screen relative z-10">
-      <!-- PAGE: HOME -->
-      <section id="page-home" class="page-section hidden">
-        <!-- Hero -->
-        <div
-          class="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
-        >
-          <div class="absolute inset-0 bg-hero-glow opacity-30"></div>
-          <div
-            class="relative z-10 text-center px-4 max-w-5xl mx-auto scroll-reveal"
-          >
-            <span
-              class="inline-block py-1 px-3 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-xs font-bold tracking-widest uppercase mb-6"
-            >
-              Innovación Digital 2026
-            </span>
-            <h1
-              class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-tight font-display"
-            >
-              CONSTRUIMOS TU <br />
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow"
-              >
-                FUTURO DIGITAL
-              </span>
-            </h1>
-            <p
-              class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
-            >
-              Fusionamos desarrollo web de vanguardia con inteligencia
-              artificial para crear experiencias digitales que transforman
-              negocios.
+   <!-- HOME - NUEVA VERSIÓN IMPACTANTE -->
+<section id="page-home" class="page-section hidden">
+
+  <!-- HERO -->
+  <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cyber-black"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,240,255,0.15), transparent), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(112,0,255,0.1), transparent);"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(0,240,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,0.5) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute top-1/4 left-10 w-64 h-64 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-cyber-purple/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 mb-8 scroll-reveal">
+        <div class="w-2 h-2 rounded-full bg-cyber-blue animate-pulse"></div>
+        <span id="hero-badge" class="text-cyber-blue text-xs font-bold tracking-widest uppercase">Innovación Digital 2026</span>
+        <div class="w-2 h-2 rounded-full bg-cyber-blue animate-pulse"></div>
+      </div>
+
+      <h1 id="hero-title" class="font-display font-bold tracking-tighter mb-8 scroll-reveal" style="font-size: clamp(3rem, 10vw, 8rem); line-height: 0.95;">
+        CONSTRUIMOS TU <br/>
+        <span class="relative inline-block">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-white to-cyber-purple text-glow">FUTURO DIGITAL</span>
+          <span class="absolute -bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-blue to-transparent"></span>
+        </span>
+      </h1>
+
+      <p id="hero-sub" class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed scroll-reveal delay-100" style="font-size: clamp(1rem, 2vw, 1.25rem);">
+        Fusionamos desarrollo web de vanguardia con inteligencia artificial para crear experiencias digitales que transforman negocios.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 scroll-reveal delay-200">
+        <a href="#/contacto" class="w-full sm:w-auto group">
+          <button id="hero-btn1" class="w-full relative px-8 py-4 font-bold tracking-widest uppercase text-sm overflow-hidden bg-cyber-blue text-black hover:bg-transparent hover:text-cyber-blue border border-cyber-blue transition-all duration-500 btn-glow flex items-center justify-center gap-3">
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            Solicitar Presupuesto
+          </button>
+        </a>
+        <a href="#/servicios" class="w-full sm:w-auto">
+          <button id="hero-btn2" class="w-full px-8 py-4 font-bold tracking-widest uppercase text-sm border border-white/20 text-white hover:border-cyber-blue/50 hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-3">
+            <i data-lucide="grid" class="w-4 h-4"></i>
+            Explorar Servicios
+          </button>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto scroll-reveal delay-300">
+        <div class="text-center border-r border-white/10">
+          <div class="text-2xl font-bold text-cyber-blue font-display">50+</div>
+          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Proyectos</div>
+        </div>
+        <div class="text-center border-r border-white/10">
+          <div class="text-2xl font-bold text-white font-display">99%</div>
+          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Satisfacción</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-cyber-purple font-display">24/7</div>
+          <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Soporte IA</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <div class="w-px h-12 bg-gradient-to-b from-transparent to-cyber-blue"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-cyber-blue animate-bounce"></div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <div class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-cyber-blue text-xs font-bold tracking-widest uppercase">Lo que hacemos</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-3 font-display">Nuestros <span class="text-cyber-blue">Servicios</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <a href="#/servicios/desarrollo-web" class="group scroll-reveal delay-100">
+        <div class="relative p-6 h-full rounded-xl overflow-hidden border border-white/5 hover:border-cyber-blue/40 transition-all duration-500" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 blur-2xl rounded-full group-hover:w-32 group-hover:h-32 transition-all duration-500"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:border-cyber-blue/50 transition-colors">
+              <i data-lucide="code" class="w-6 h-6 text-blue-400"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:text-cyber-blue transition-colors">Desarrollo Web</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Sitios modernos y veloces a medida.</p>
+            <div class="mt-5 flex items-center text-xs font-bold uppercase tracking-widest text-cyber-blue/50 group-hover:text-cyber-blue transition-colors gap-1">
+              Ver más <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="#/servicios/inteligencia-artificial" class="group scroll-reveal delay-200">
+        <div class="relative p-6 h-full rounded-xl overflow-hidden border border-white/5 hover:border-purple-500/40 transition-all duration-500" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute top-0 right-0 w-20 h-20 bg-purple-500/10 blur-2xl rounded-full group-hover:w-32 group-hover:h-32 transition-all duration-500"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-5 group-hover:border-purple-500/50 transition-colors">
+              <i data-lucide="brain" class="w-6 h-6 text-purple-400"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:text-purple-400 transition-colors">Inteligencia Artificial</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Automatización y chatbots IA.</p>
+            <div class="mt-5 flex items-center text-xs font-bold uppercase tracking-widest text-purple-400/50 group-hover:text-purple-400 transition-colors gap-1">
+              Ver más <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="#/servicios/web-ia" class="group scroll-reveal delay-300">
+        <div class="relative p-6 h-full rounded-xl overflow-hidden border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-500" style="background: rgba(0,240,255,0.02)">
+          <div class="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 to-cyber-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute top-2 right-2 bg-cyber-blue text-black text-xs font-bold px-2 py-0.5 rounded tracking-wider uppercase">Popular</div>
+          <div class="absolute top-0 right-0 w-20 h-20 bg-cyber-blue/10 blur-2xl rounded-full group-hover:w-32 group-hover:h-32 transition-all duration-500"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center mb-5 group-hover:border-cyber-blue transition-colors">
+              <i data-lucide="zap" class="w-6 h-6 text-cyber-blue"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:text-cyber-blue transition-colors">Web + IA</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">El poder combinado de ambos.</p>
+            <div class="mt-5 flex items-center text-xs font-bold uppercase tracking-widest text-cyber-blue/50 group-hover:text-cyber-blue transition-colors gap-1">
+              Ver más <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="#/servicios/mantenimiento" class="group scroll-reveal delay-400">
+        <div class="relative p-6 h-full rounded-xl overflow-hidden border border-white/5 hover:border-green-500/40 transition-all duration-500" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute top-0 right-0 w-20 h-20 bg-green-500/10 blur-2xl rounded-full group-hover:w-32 group-hover:h-32 transition-all duration-500"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-5 group-hover:border-green-500/50 transition-colors">
+              <i data-lucide="shield" class="w-6 h-6 text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:text-green-400 transition-colors">Mantenimiento</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Seguridad y estabilidad continua.</p>
+            <div class="mt-5 flex items-center text-xs font-bold uppercase tracking-widest text-green-400/50 group-hover:text-green-400 transition-colors gap-1">
+              Ver más <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PROCESO -->
+  <div class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent, rgba(0,240,255,0.03) 50%, transparent);"></div>
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div class="text-center mb-16 scroll-reveal">
+        <span class="text-cyber-blue text-xs font-bold tracking-widest uppercase">Cómo trabajamos</span>
+        <h2 id="proceso-title" class="text-3xl md:text-5xl font-bold mt-3 font-display">Nuestro <span class="text-cyber-blue">Proceso</span></h2>
+        <p id="proceso-sub" class="text-gray-500 mt-3">Metodología ágil para resultados exponenciales.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        <div class="hidden md:block absolute top-10 left-[12.5%] w-3/4 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,240,255,0.3), rgba(112,0,255,0.3), transparent);"></div>
+        <div class="relative text-center scroll-reveal delay-100">
+          <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-cyber-dark border border-cyber-blue/30 flex items-center justify-center relative z-10 hover:border-cyber-blue transition-colors duration-300">
+            <i data-lucide="search" class="w-8 h-8 text-cyber-blue"></i>
+          </div>
+          <h3 id="paso1-title" class="font-bold mb-2">1. Análisis</h3>
+          <p id="paso1-sub" class="text-sm text-gray-500">Estudiamos tus necesidades y definimos la arquitectura ideal.</p>
+        </div>
+        <div class="relative text-center scroll-reveal delay-200">
+          <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-cyber-dark border border-purple-500/30 flex items-center justify-center relative z-10 hover:border-purple-500 transition-colors duration-300">
+            <i data-lucide="pen-tool" class="w-8 h-8 text-purple-400"></i>
+          </div>
+          <h3 id="paso2-title" class="font-bold mb-2">2. Diseño</h3>
+          <p id="paso2-sub" class="text-sm text-gray-500">Prototipado UI/UX futurista enfocado en la conversión.</p>
+        </div>
+        <div class="relative text-center scroll-reveal delay-300">
+          <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-cyber-dark border border-pink-500/30 flex items-center justify-center relative z-10 hover:border-pink-500 transition-colors duration-300">
+            <i data-lucide="code-2" class="w-8 h-8 text-pink-400"></i>
+          </div>
+          <h3 id="paso3-title" class="font-bold mb-2">3. Desarrollo</h3>
+          <p id="paso3-sub" class="text-sm text-gray-500">Código limpio, escalable y optimizado para SEO.</p>
+        </div>
+        <div class="relative text-center scroll-reveal delay-400">
+          <div class="w-20 h-20 mx-auto mb-5 rounded-2xl bg-cyber-dark border border-green-500/30 flex items-center justify-center relative z-10 hover:border-green-500 transition-colors duration-300">
+            <i data-lucide="rocket" class="w-8 h-8 text-green-400"></i>
+          </div>
+          <h3 id="paso4-title" class="font-bold mb-2">4. Despliegue</h3>
+          <p id="paso4-sub" class="text-sm text-gray-500">Lanzamiento, monitoreo y optimización continua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARSENAL + TESTIMONIO -->
+  <div class="py-24 max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="scroll-reveal">
+        <span class="text-cyber-blue text-xs font-bold tracking-widest uppercase">Tecnologías</span>
+        <h3 id="arsenal-title" class="text-2xl font-bold mt-3 mb-8 font-display border-l-4 border-cyber-blue pl-4">Arsenal Tecnológico</h3>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="atom" class="w-7 h-7 mx-auto mb-2 text-blue-400 group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">React</span>
+          </div>
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="file-code" class="w-7 h-7 mx-auto mb-2 text-blue-600 group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">TypeScript</span>
+          </div>
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="wind" class="w-7 h-7 mx-auto mb-2 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">Tailwind</span>
+          </div>
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="cloud-lightning" class="w-7 h-7 mx-auto mb-2 text-white group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">Vercel</span>
+          </div>
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="container" class="w-7 h-7 mx-auto mb-2 text-blue-500 group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">Docker</span>
+          </div>
+          <div class="group p-4 rounded-xl border border-white/5 hover:border-cyber-blue/30 hover:bg-cyber-blue/5 transition-all duration-300 text-center cursor-default" style="background:rgba(255,255,255,0.02)">
+            <i data-lucide="move" class="w-7 h-7 mx-auto mb-2 text-purple-400 group-hover:scale-110 transition-transform"></i>
+            <span class="text-xs font-bold text-gray-500 group-hover:text-gray-300 transition-colors">Motion</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-reveal delay-200">
+        <div class="relative p-8 rounded-2xl border border-white/10 overflow-hidden" style="background: linear-gradient(135deg, rgba(0,240,255,0.05), rgba(112,0,255,0.05));">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-cyber-blue/10 blur-3xl rounded-full"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-cyber-purple/10 blur-3xl rounded-full"></div>
+          <div class="absolute top-4 right-6 text-cyber-blue/10 font-display" style="font-size: 8rem; line-height: 1;">"</div>
+          <div class="relative z-10">
+            <div class="flex gap-1 mb-5">
+              <i data-lucide="star" class="w-4 h-4 text-cyber-blue fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 text-cyber-blue fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 text-cyber-blue fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 text-cyber-blue fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 text-cyber-blue fill-current"></i>
+            </div>
+            <p id="testimonial-text" class="text-gray-300 leading-relaxed mb-8 text-lg italic">
+              "WebTech transformó completamente nuestra infraestructura digital. La integración de IA en nuestro servicio al cliente redujo los tiempos de respuesta en un 80%. Simplemente brillante."
             </p>
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-4"
-            >
-              <a href="#/contacto" class="w-full sm:w-auto">
-                <button
-                  class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow flex items-center justify-center gap-2"
-                >
-                  Solicitar Presupuesto
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-              </a>
-              <a href="#/servicios" class="w-full sm:w-auto">
-                <button
-                  class="w-full px-6 py-3 font-bold tracking-wider uppercase border border-white/20 text-white hover:border-white hover:bg-white/5 transition-all duration-300"
-                >
-                  Explorar Servicios
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Services Preview -->
-        <div class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Service Cards -->
-            <a href="#/servicios/desarrollo-web" class="group">
-              <div
-                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-100"
-              >
-                <div
-                  class="mb-4 text-blue-400 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i data-lucide="code" class="w-8 h-8"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
-                >
-                  Desarrollo Web
-                </h3>
-                <p class="text-gray-400 text-sm">Sitios modernos y veloces.</p>
-              </div>
-            </a>
-            <a href="#/servicios/inteligencia-artificial" class="group">
-              <div
-                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-200"
-              >
-                <div
-                  class="mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i data-lucide="brain" class="w-8 h-8"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
-                >
-                  Inteligencia Artificial
-                </h3>
-                <p class="text-gray-400 text-sm">Automatización y chatbots.</p>
-              </div>
-            </a>
-            <a href="#/servicios/web-ia" class="group">
-              <div
-                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-300"
-              >
-                <div
-                  class="mb-4 text-yellow-400 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i data-lucide="zap" class="w-8 h-8"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
-                >
-                  Web + IA
-                </h3>
-                <p class="text-gray-400 text-sm">El poder combinado.</p>
-              </div>
-            </a>
-            <a href="#/servicios/mantenimiento" class="group">
-              <div
-                class="glass-panel p-6 h-full rounded-lg hover:border-cyber-blue/50 transition-all duration-300 scroll-reveal delay-400"
-              >
-                <div
-                  class="mb-4 text-green-400 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <i data-lucide="shield" class="w-8 h-8"></i>
-                </div>
-                <h3
-                  class="text-xl font-bold mb-2 group-hover:text-cyber-blue transition-colors"
-                >
-                  Mantenimiento
-                </h3>
-                <p class="text-gray-400 text-sm">Seguridad y estabilidad.</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- NEW: Process Section -->
-        <div class="py-20 bg-cyber-black/50 border-y border-white/5">
-          <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-              <h2 class="text-3xl md:text-5xl font-bold mb-4 font-display">
-                Nuestro <span class="text-cyber-blue">Proceso</span>
-              </h2>
-              <p class="text-gray-400">
-                Metodología ágil para resultados exponenciales.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-              <!-- Connecting Line (Desktop) -->
-              <div
-                class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent z-0"
-              ></div>
-
-              <!-- Step 1 -->
-              <div class="relative z-10 text-center scroll-reveal delay-100">
-                <div
-                  class="w-24 h-24 mx-auto bg-cyber-dark border border-cyber-blue/50 rounded-full flex items-center justify-center mb-6 box-glow"
-                >
-                  <i data-lucide="search" class="w-10 h-10 text-cyber-blue"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">1. Análisis</h3>
-                <p class="text-sm text-gray-400">
-                  Estudiamos tus necesidades y definimos la arquitectura ideal.
-                </p>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="relative z-10 text-center scroll-reveal delay-200">
-                <div
-                  class="w-24 h-24 mx-auto bg-cyber-dark border border-purple-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
-                >
-                  <i
-                    data-lucide="pen-tool"
-                    class="w-10 h-10 text-purple-500"
-                  ></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">2. Diseño</h3>
-                <p class="text-sm text-gray-400">
-                  Prototipado UI/UX futurista enfocado en la conversión.
-                </p>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="relative z-10 text-center scroll-reveal delay-300">
-                <div
-                  class="w-24 h-24 mx-auto bg-cyber-dark border border-pink-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
-                >
-                  <i data-lucide="code-2" class="w-10 h-10 text-pink-500"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">3. Desarrollo</h3>
-                <p class="text-sm text-gray-400">
-                  Código limpio, escalable y optimizado para SEO.
-                </p>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="relative z-10 text-center scroll-reveal delay-400">
-                <div
-                  class="w-24 h-24 mx-auto bg-cyber-dark border border-green-500/50 rounded-full flex items-center justify-center mb-6 box-glow"
-                >
-                  <i data-lucide="rocket" class="w-10 h-10 text-green-500"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">4. Despliegue</h3>
-                <p class="text-sm text-gray-400">
-                  Lanzamiento, monitoreo y optimización continua.
-                </p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-blue to-cyber-purple flex items-center justify-center text-black font-bold text-lg">E</div>
+              <div>
+                <h4 class="font-bold text-white">Elena K.</h4>
+                <p id="testimonial-role" class="text-xs text-cyber-blue uppercase tracking-widest">CEO, FutureSystems</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- NEW: Tech Stack & Testimonials -->
-        <div class="py-20 max-w-7xl mx-auto px-4 md:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <!-- Tech Stack -->
-            <div class="scroll-reveal">
-              <h3
-                class="text-2xl font-bold mb-8 font-display border-l-4 border-cyber-blue pl-4"
-              >
-                Arsenal Tecnológico
-              </h3>
-              <div class="grid grid-cols-3 gap-4">
-                <!-- React -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="atom"
-                    class="w-8 h-8 mx-auto mb-2 text-blue-400"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400">React</span>
-                </div>
-                <!-- TypeScript -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="file-code"
-                    class="w-8 h-8 mx-auto mb-2 text-blue-600"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400"
-                    >TypeScript</span
-                  >
-                </div>
-                <!-- Tailwind -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="wind"
-                    class="w-8 h-8 mx-auto mb-2 text-cyan-400"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400">Tailwind</span>
-                </div>
-                <!-- Vercel/Deploy -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="cloud-lightning"
-                    class="w-8 h-8 mx-auto mb-2 text-white"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400">Vercel</span>
-                </div>
-                <!-- Docker -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="container"
-                    class="w-8 h-8 mx-auto mb-2 text-blue-500"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400">Docker</span>
-                </div>
-                <!-- Motion -->
-                <div
-                  class="p-4 bg-white/5 rounded-lg text-center hover:bg-white/10 transition-colors"
-                >
-                  <i
-                    data-lucide="move"
-                    class="w-8 h-8 mx-auto mb-2 text-purple-400"
-                  ></i>
-                  <span class="text-xs font-bold text-gray-400">Motion</span>
-                </div>
-              </div>
-            </div>
+  <!-- CTA FINAL -->
+  <div class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,240,255,0.05), transparent);"></div>
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center scroll-reveal relative z-10">
+      <span class="text-cyber-blue text-xs font-bold tracking-widest uppercase">¿Listo para empezar?</span>
+      <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-6 font-display">
+        Hablemos sobre <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow">tu proyecto</span>
+      </h2>
+      <p class="text-gray-400 mb-10 text-lg max-w-xl mx-auto">Cuéntanos qué necesitas y te hacemos una propuesta personalizada sin compromiso.</p>
+      <a href="#/contacto">
+        <button class="px-10 py-5 font-bold tracking-widest uppercase text-sm bg-cyber-blue text-black hover:bg-transparent hover:text-cyber-blue border border-cyber-blue transition-all duration-500 btn-glow flex items-center gap-3 mx-auto">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          Contactar ahora
+        </button>
+      </a>
+    </div>
+  </div>
 
-            <!-- Testimonial -->
-            <div
-              class="glass-panel p-8 rounded-xl relative scroll-reveal delay-200"
-            >
-              <i
-                data-lucide="quote"
-                class="absolute top-6 right-6 w-12 h-12 text-white/10"
-              ></i>
-              <div class="flex items-center gap-4 mb-6">
-                <div
-                  class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-purple-600 rounded-full"
-                ></div>
-                <div>
-                  <h4 class="font-bold text-white">Elena K.</h4>
-                  <p class="text-xs text-cyber-blue uppercase tracking-wider">
-                    CEO, FutureSystems
-                  </p>
-                </div>
-              </div>
-              <p class="text-gray-300 italic leading-relaxed">
-                "WebTech transformó completamente nuestra infraestructura
-                digital. La integración de IA en nuestro servicio al cliente
-                redujo los tiempos de respuesta en un 80%. Simplemente
-                brillante."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+</section>
 
       <!-- PAGE: SERVICES INDEX -->
       <section id="page-servicios" class="page-section hidden pt-10 pb-20">
