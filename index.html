@@ -1092,27 +1092,55 @@
       </div>
     </div>
 
-    <!-- Pol Alegre -->
-    <div class="flex justify-center mb-20 scroll-reveal delay-100">
-      <div class="relative group max-w-sm w-full">
-        <!-- Glow exterior -->
-        <div class="absolute -inset-1 bg-gradient-to-b from-cyber-blue via-cyber-purple to-transparent rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+    <!-- Pol + Misión -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 scroll-reveal delay-100">
 
-        <div class="relative rounded-2xl overflow-hidden border border-cyber-blue/20" style="background: rgba(10,10,18,0.9)">
-          <!-- Imagen grande -->
-          <div class="relative overflow-hidden bg-cyber-dark" style="height: 420px;">
-            <!-- Fondo con glow -->
+      <!-- Misión -->
+      <div class="glass-panel p-10 rounded-2xl border border-white/10 flex flex-col justify-between">
+        <div>
+          <h2 id="nosotros-mision" class="text-2xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4 mb-8">Nuestra misión</h2>
+          <div class="space-y-5 text-gray-400 leading-relaxed text-lg">
+            <p id="nosotros-p1">WebTech es una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas. Nuestro objetivo es mejorar la presencia digital de los negocios, optimizar sus procesos y ofrecer una mejor experiencia a sus clientes.</p>
+            <p id="nosotros-p2">Desarrollamos páginas y aplicaciones web a medida, priorizando el diseño, el rendimiento y la usabilidad. También integramos inteligencia artificial de forma práctica y adaptada a cada empresa.</p>
+            <p id="nosotros-p3">Nuestro enfoque se basa en la calidad, la innovación y un trato cercano con los clientes, buscando convertirnos en un socio tecnológico a largo plazo.</p>
+          </div>
+        </div>
+        <!-- Stats al fondo -->
+        <div class="grid grid-cols-2 gap-4 mt-10">
+          <div class="text-center p-4 rounded-xl border border-cyber-blue/20 bg-cyber-blue/5">
+            <div class="text-3xl font-bold text-cyber-blue font-display">50+</div>
+            <div id="nosotros-stat1" class="text-xs text-gray-400 uppercase tracking-widest mt-1">Proyectos</div>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-purple-500/20 bg-purple-500/5">
+            <div class="text-3xl font-bold text-purple-500 font-display">99%</div>
+            <div id="nosotros-stat2" class="text-xs text-gray-400 uppercase tracking-widest mt-1">Satisfacción</div>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-pink-500/20 bg-pink-500/5">
+            <div class="text-3xl font-bold text-pink-500 font-display">24/7</div>
+            <div id="nosotros-stat3" class="text-xs text-gray-400 uppercase tracking-widest mt-1">Soporte IA</div>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-green-500/20 bg-green-500/5">
+            <div class="text-3xl font-bold text-green-500 font-display">100%</div>
+            <div id="nosotros-stat4" class="text-xs text-gray-400 uppercase tracking-widest mt-1">Compromiso</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pol Alegre -->
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-b from-cyber-blue via-cyber-purple to-transparent rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+        <div class="relative h-full rounded-2xl overflow-hidden border border-cyber-blue/20 flex flex-col" style="background: rgba(10,10,18,0.9)">
+          <!-- Imagen -->
+          <div class="relative overflow-hidden flex-1 bg-cyber-dark">
             <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,240,255,0.08), transparent);"></div>
             <img
               src="img/foto_sobr_nosotros.png"
               class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               alt="Pol Alegre"
             />
-            <!-- Gradiente inferior -->
             <div class="absolute bottom-0 left-0 w-full h-24" style="background: linear-gradient(to top, rgba(10,10,18,0.95), transparent);"></div>
           </div>
-
-          <!-- Info debajo -->
+          <!-- Info -->
           <div class="px-8 pb-8 pt-4 text-center">
             <h3 class="text-3xl font-bold text-white font-display mb-4">Pol Alegre</h3>
             <div class="flex flex-col gap-2">
@@ -1133,44 +1161,11 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Misión -->
-    <div class="mb-20 scroll-reveal delay-200">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass-panel p-8 rounded-2xl border border-white/10">
-          <h2 id="nosotros-mision" class="text-2xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4 mb-6">Nuestra misión</h2>
-          <div class="space-y-4 text-gray-400 leading-relaxed">
-            <p id="nosotros-p1">WebTech es una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas. Nuestro objetivo es mejorar la presencia digital de los negocios, optimizar sus procesos y ofrecer una mejor experiencia a sus clientes.</p>
-            <p id="nosotros-p2">Desarrollamos páginas y aplicaciones web a medida, priorizando el diseño, el rendimiento y la usabilidad. También integramos inteligencia artificial de forma práctica y adaptada a cada empresa.</p>
-            <p id="nosotros-p3">Nuestro enfoque se basa en la calidad, la innovación y un trato cercano con los clientes, buscando convertirnos en un socio tecnológico a largo plazo.</p>
-          </div>
-        </div>
-
-        <!-- Stats integradas -->
-        <div class="grid grid-cols-2 gap-4 content-start">
-          <div class="glass-panel p-6 rounded-xl text-center border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300 group">
-            <div class="text-4xl font-bold text-cyber-blue mb-2 font-display group-hover:scale-110 transition-transform">50+</div>
-            <div id="nosotros-stat1" class="text-xs text-gray-400 uppercase tracking-widest">Proyectos</div>
-          </div>
-          <div class="glass-panel p-6 rounded-xl text-center border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
-            <div class="text-4xl font-bold text-purple-500 mb-2 font-display group-hover:scale-110 transition-transform">99%</div>
-            <div id="nosotros-stat2" class="text-xs text-gray-400 uppercase tracking-widest">Satisfacción</div>
-          </div>
-          <div class="glass-panel p-6 rounded-xl text-center border border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 group">
-            <div class="text-4xl font-bold text-pink-500 mb-2 font-display group-hover:scale-110 transition-transform">24/7</div>
-            <div id="nosotros-stat3" class="text-xs text-gray-400 uppercase tracking-widest">Soporte IA</div>
-          </div>
-          <div class="glass-panel p-6 rounded-xl text-center border border-green-500/20 hover:border-green-500/50 transition-all duration-300 group">
-            <div class="text-4xl font-bold text-green-500 mb-2 font-display group-hover:scale-110 transition-transform">100%</div>
-            <div id="nosotros-stat4" class="text-xs text-gray-400 uppercase tracking-widest">Compromiso</div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Valores -->
-    <div class="scroll-reveal delay-300">
+    <div class="scroll-reveal delay-200">
       <h2 id="valores-title" class="text-3xl font-bold mb-10 text-center font-display">Nuestros <span class="text-cyber-blue">Valores</span></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="group relative p-8 rounded-xl text-center border border-white/5 hover:border-cyber-blue/40 transition-all duration-300 overflow-hidden hover:scale-105" style="background: rgba(255,255,255,0.02)">
