@@ -1076,25 +1076,19 @@
   </div>
 </section>
 
-<!-- PAGE: ABOUT -->
+<!-- NOSOTROS -->
 <section id="page-nosotros" class="page-section hidden pt-10 pb-20">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
 
-    <!-- Hero Nosotros -->
+    <!-- Hero -->
     <div class="relative text-center mb-20 scroll-reveal">
       <div class="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 via-transparent to-cyber-purple/5 rounded-3xl"></div>
       <div class="absolute top-0 left-1/3 w-72 h-72 bg-cyber-blue/10 blur-3xl rounded-full"></div>
       <div class="absolute bottom-0 right-1/3 w-72 h-72 bg-cyber-purple/10 blur-3xl rounded-full"></div>
       <div class="relative z-10 py-16 px-4">
-        <span class="inline-block py-1 px-3 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-xs font-bold tracking-widest uppercase mb-6">
-          Quiénes somos
-        </span>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 font-display">
-          Sobre <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow">WebTech</span>
-        </h1>
-        <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          Una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas, combinando diseño, tecnología e inteligencia artificial.
-        </p>
+        <span id="nosotros-badge" class="inline-block py-1 px-3 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-xs font-bold tracking-widest uppercase mb-6">Quiénes somos</span>
+        <h1 id="nosotros-title" class="text-5xl md:text-7xl font-bold mb-6 font-display">Sobre <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple text-glow">WebTech</span></h1>
+        <p id="nosotros-sub" class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">Una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas, combinando diseño, tecnología e inteligencia artificial.</p>
       </div>
     </div>
 
@@ -1102,71 +1096,57 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 scroll-reveal delay-100">
       <div class="glass-panel p-6 rounded-xl text-center border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300 group">
         <div class="text-4xl font-bold text-cyber-blue mb-2 font-display group-hover:scale-110 transition-transform">50+</div>
-        <div class="text-xs text-gray-400 uppercase tracking-widest">Proyectos</div>
+        <div id="nosotros-stat1" class="text-xs text-gray-400 uppercase tracking-widest">Proyectos</div>
       </div>
       <div class="glass-panel p-6 rounded-xl text-center border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
         <div class="text-4xl font-bold text-purple-500 mb-2 font-display group-hover:scale-110 transition-transform">99%</div>
-        <div class="text-xs text-gray-400 uppercase tracking-widest">Satisfacción</div>
+        <div id="nosotros-stat2" class="text-xs text-gray-400 uppercase tracking-widest">Satisfacción</div>
       </div>
       <div class="glass-panel p-6 rounded-xl text-center border border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 group">
         <div class="text-4xl font-bold text-pink-500 mb-2 font-display group-hover:scale-110 transition-transform">24/7</div>
-        <div class="text-xs text-gray-400 uppercase tracking-widest">Soporte IA</div>
+        <div id="nosotros-stat3" class="text-xs text-gray-400 uppercase tracking-widest">Soporte IA</div>
       </div>
       <div class="glass-panel p-6 rounded-xl text-center border border-green-500/20 hover:border-green-500/50 transition-all duration-300 group">
         <div class="text-4xl font-bold text-green-500 mb-2 font-display group-hover:scale-110 transition-transform">100%</div>
-        <div class="text-xs text-gray-400 uppercase tracking-widest">Compromiso</div>
+        <div id="nosotros-stat4" class="text-xs text-gray-400 uppercase tracking-widest">Compromiso</div>
       </div>
     </div>
 
-    <!-- Quiénes somos — texto + imagen -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-      <!-- Texto -->
-      <div class="scroll-reveal delay-100 space-y-6 text-gray-300 text-lg leading-relaxed">
-        <h2 class="text-3xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4 mb-8">
-          Nuestra misión
-        </h2>
-        <p>
-          WebTech es una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas. Nuestro objetivo es mejorar la presencia digital de los negocios, optimizar sus procesos y ofrecer una mejor experiencia a sus clientes.
-        </p>
-        <p>
-          Desarrollamos páginas y aplicaciones web a medida, priorizando el diseño, el rendimiento y la usabilidad. También integramos inteligencia artificial en nuestros proyectos, como chatbots y automatización de respuestas, de forma práctica y adaptada a cada empresa.
-        </p>
-        <p>
-          Nuestro enfoque se basa en la calidad, la innovación y un trato cercano con los clientes, buscando convertirnos en un socio tecnológico a largo plazo.
-        </p>
-      </div>
+    <!-- Misión -->
+    <div class="mb-20 scroll-reveal">
+      <div class="glass-panel rounded-2xl overflow-hidden border border-white/10">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Texto -->
+          <div class="p-10 md:p-12 flex flex-col justify-center space-y-6 text-gray-300 text-lg leading-relaxed border-b lg:border-b-0 lg:border-r border-white/10">
+            <h2 id="nosotros-mision" class="text-3xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4">Nuestra misión</h2>
+            <p id="nosotros-p1">WebTech es una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas. Nuestro objetivo es mejorar la presencia digital de los negocios, optimizar sus procesos y ofrecer una mejor experiencia a sus clientes.</p>
+            <p id="nosotros-p2">Desarrollamos páginas y aplicaciones web a medida, priorizando el diseño, el rendimiento y la usabilidad. También integramos inteligencia artificial de forma práctica y adaptada a cada empresa.</p>
+            <p id="nosotros-p3">Nuestro enfoque se basa en la calidad, la innovación y un trato cercano con los clientes, buscando convertirnos en un socio tecnológico a largo plazo.</p>
+          </div>
 
-      <!-- Tarjeta Pol — rediseñada -->
-      <div class="scroll-reveal delay-200">
-        <div class="relative group">
-          <!-- Fondo glow -->
-          <div class="absolute -inset-1 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-          <div class="relative glass-panel rounded-2xl overflow-hidden border border-cyber-blue/20">
-            <!-- Foto -->
-            <div class="relative h-80 overflow-hidden">
-            <img
-              src="img/foto_sobr_nosotros.png"
-              class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
-              alt="Pol Alegre"
-            />
-              <div class="absolute inset-0 bg-gradient-to-t from-cyber-dark via-transparent to-transparent"></div>
-            </div>
-            <!-- Info -->
-            <div class="p-8">
-              <div class="flex items-start justify-between mb-4">
-                <div>
-                  <h3 class="text-2xl font-bold text-white font-display">Pol Alegre</h3>
-                  <div class="flex flex-wrap gap-2 mt-3">
-                    <span class="text-xs px-2 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue font-bold uppercase tracking-wider">CEO</span>
-                    <span class="text-xs px-2 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-bold uppercase tracking-wider">Full Stack</span>
-                    <span class="text-xs px-2 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 font-bold uppercase tracking-wider">UX/UI</span>
-                  </div>
-                </div>
+          <!-- Tarjeta Pol -->
+          <div class="p-10 md:p-12 flex flex-col items-center justify-center text-center">
+            <!-- Imagen -->
+            <div class="relative mb-6">
+              <!-- Glow detrás de la imagen -->
+              <div class="absolute inset-0 bg-cyber-blue/20 blur-2xl rounded-full scale-110"></div>
+              <div class="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-cyber-blue/40 group hover:border-cyber-blue transition-colors duration-300" style="background: rgba(0,240,255,0.05)">
+                <img
+                  src="img/foto_sobr_nosotros.png"
+                  class="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-105"
+                  alt="Pol Alegre"
+                />
               </div>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                Apasionado por la tecnología y el diseño, Pol lidera WebTech con una visión clara de innovación y calidad.
-              </p>
             </div>
+
+            <!-- Info -->
+            <h3 class="text-2xl font-bold text-white font-display mb-3">Pol Alegre</h3>
+            <div class="flex flex-wrap justify-center gap-2 mb-4">
+              <span class="text-xs px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue font-bold uppercase tracking-wider">CEO</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-bold uppercase tracking-wider">Full Stack</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 font-bold uppercase tracking-wider">UX/UI</span>
+            </div>
+            <p id="pol-bio" class="text-gray-400 text-sm leading-relaxed max-w-xs">Apasionado por la tecnología y el diseño, Pol lidera WebTech con una visión clara de innovación y calidad.</p>
           </div>
         </div>
       </div>
@@ -1174,30 +1154,31 @@
 
     <!-- Valores -->
     <div class="mb-10 scroll-reveal delay-100">
-      <h2 class="text-3xl font-bold mb-10 text-center font-display">
-        Nuestros <span class="text-cyber-blue">Valores</span>
-      </h2>
+      <h2 id="valores-title" class="text-3xl font-bold mb-10 text-center font-display">Nuestros <span class="text-cyber-blue">Valores</span></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass-panel p-8 rounded-xl text-center border-t-4 border-cyber-blue hover:scale-105 transition-transform duration-300 scroll-reveal delay-100">
-          <div class="w-16 h-16 mx-auto mb-6 bg-cyber-blue/10 rounded-full flex items-center justify-center">
+        <div class="group relative p-8 rounded-xl text-center border border-white/5 hover:border-cyber-blue/40 transition-all duration-300 overflow-hidden hover:scale-105" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber-blue to-transparent"></div>
+          <div class="w-16 h-16 mx-auto mb-6 bg-cyber-blue/10 rounded-full flex items-center justify-center border border-cyber-blue/20 group-hover:border-cyber-blue/50 transition-colors">
             <i data-lucide="lightbulb" class="w-8 h-8 text-cyber-blue"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">Innovación</h3>
-          <p class="text-gray-400 text-sm">Adoptamos tecnologías emergentes antes de que sean tendencia.</p>
+          <h3 id="val1-title" class="text-xl font-bold mb-4">Innovación</h3>
+          <p id="val1-desc" class="text-gray-400 text-sm">Adoptamos tecnologías emergentes antes de que sean tendencia.</p>
         </div>
-        <div class="glass-panel p-8 rounded-xl text-center border-t-4 border-purple-500 hover:scale-105 transition-transform duration-300 scroll-reveal delay-200">
-          <div class="w-16 h-16 mx-auto mb-6 bg-purple-500/10 rounded-full flex items-center justify-center">
+        <div class="group relative p-8 rounded-xl text-center border border-white/5 hover:border-purple-500/40 transition-all duration-300 overflow-hidden hover:scale-105" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+          <div class="w-16 h-16 mx-auto mb-6 bg-purple-500/10 rounded-full flex items-center justify-center border border-purple-500/20 group-hover:border-purple-500/50 transition-colors">
             <i data-lucide="target" class="w-8 h-8 text-purple-500"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">Precisión</h3>
-          <p class="text-gray-400 text-sm">Código limpio, arquitectura sólida y diseño pixel-perfect.</p>
+          <h3 id="val2-title" class="text-xl font-bold mb-4">Precisión</h3>
+          <p id="val2-desc" class="text-gray-400 text-sm">Código limpio, arquitectura sólida y diseño pixel-perfect.</p>
         </div>
-        <div class="glass-panel p-8 rounded-xl text-center border-t-4 border-pink-500 hover:scale-105 transition-transform duration-300 scroll-reveal delay-300">
-          <div class="w-16 h-16 mx-auto mb-6 bg-pink-500/10 rounded-full flex items-center justify-center">
+        <div class="group relative p-8 rounded-xl text-center border border-white/5 hover:border-pink-500/40 transition-all duration-300 overflow-hidden hover:scale-105" style="background: rgba(255,255,255,0.02)">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
+          <div class="w-16 h-16 mx-auto mb-6 bg-pink-500/10 rounded-full flex items-center justify-center border border-pink-500/20 group-hover:border-pink-500/50 transition-colors">
             <i data-lucide="users" class="w-8 h-8 text-pink-500"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4">Colaboración</h3>
-          <p class="text-gray-400 text-sm">Trabajamos codo a codo contigo para materializar tu visión.</p>
+          <h3 id="val3-title" class="text-xl font-bold mb-4">Colaboración</h3>
+          <p id="val3-desc" class="text-gray-400 text-sm">Trabajamos codo a codo contigo para materializar tu visión.</p>
         </div>
       </div>
     </div>
