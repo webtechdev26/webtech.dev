@@ -933,48 +933,79 @@
 
 <!-- MANTENIMIENTO -->
 <section id="page-servicios-mantenimiento" class="page-section hidden pt-10 pb-20">
-  <div class="max-w-7xl mx-auto px-4 md:px-8">
+  <div class="max-w-4xl mx-auto px-4 md:px-8">
     <a href="#/servicios" class="volver-servicios inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors">
       <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a Servicios
     </a>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-      <div class="lg:col-span-2 scroll-reveal">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue"><i data-lucide="shield" class="w-8 h-8"></i></div>
-          <h1 id="mant-title" class="text-4xl md:text-5xl font-bold font-display">Mantenimiento Web</h1>
-        </div>
-        <p id="mant-sub" class="text-xl text-gray-400 mb-12 border-l-4 border-cyber-blue pl-6 italic">Mantén tu web segura, actualizada y funcionando al máximo rendimiento.</p>
-        <div class="mt-6 mb-10 bg-white/5 border border-white/10 rounded-xl p-8">
-          <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-cyber-blue"></i> ¿Para quién es este servicio?</h2>
-          <p class="text-gray-300 leading-relaxed">Para cualquier negocio que ya tenga una web y quiera mantenerla <strong class="text-white">segura, actualizada y con el mejor rendimiento</strong> mes a mes sin preocupaciones.</p>
-        </div>
-        <div class="mb-10">
-          <h2 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="package" class="w-5 h-5 text-cyber-blue"></i> ¿Qué incluye?</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="border border-white/10 p-6 rounded-lg hover:border-cyber-blue/30 transition-colors">
-              <i data-lucide="refresh-cw" class="w-8 h-8 text-green-400 mb-4"></i>
-              <h4 id="mant-act" class="font-bold mb-2">Actualizaciones de contenido</h4>
-              <p class="text-gray-500 text-sm">Mantenemos tu web siempre al día con los últimos cambios de tu negocio.</p>
-            </div>
-            <div class="border border-white/10 p-6 rounded-lg hover:border-cyber-blue/30 transition-colors">
-              <i data-lucide="lock" class="w-8 h-8 text-red-400 mb-4"></i>
-              <h4 id="mant-seg" class="font-bold mb-2">Seguridad de la web</h4>
-              <p class="text-gray-500 text-sm">Protegemos tu web frente a amenazas y vulnerabilidades.</p>
-            </div>
-            <div class="border border-white/10 p-6 rounded-lg hover:border-cyber-blue/30 transition-colors">
-              <i data-lucide="activity" class="w-8 h-8 text-blue-400 mb-4"></i>
-              <h4 id="mant-rend" class="font-bold mb-2">Optimización de rendimiento</h4>
-              <p class="text-gray-500 text-sm">Tu web siempre cargando rápido para dar la mejor experiencia.</p>
+    <div class="scroll-reveal">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="p-3 bg-cyber-blue/10 rounded-lg text-cyber-blue"><i data-lucide="shield" class="w-8 h-8"></i></div>
+        <h1 id="mant-title" class="text-4xl md:text-5xl font-bold font-display">Mantenimiento <span class="text-cyber-blue">Web</span></h1>
+      </div>
+
+      <!-- Para quién va -->
+      <div class="mt-6 mb-10 bg-white/5 border border-white/10 rounded-xl p-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-cyber-blue"></i> ¿Para quién es este servicio?</h2>
+        <p id="mant-sub" class="text-gray-300 leading-relaxed">Para cualquier negocio que ya tenga una web y quiera mantenerla <strong class="text-white">segura, actualizada y funcionando al máximo rendimiento</strong> mes a mes sin preocupaciones.</p>
+        <ul class="mt-4 space-y-2 text-gray-400 text-sm">
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-cyber-blue mt-0.5"></i> Negocios que no quieren preocuparse por la seguridad de su web</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-cyber-blue mt-0.5"></i> Empresas que necesitan actualizar el contenido de su web frecuentemente</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-cyber-blue mt-0.5"></i> Proyectos que quieren mantener su web siempre rápida y optimizada</li>
+        </ul>
+      </div>
+
+      <!-- Qué incluye -->
+      <div class="mb-10">
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="package" class="w-5 h-5 text-cyber-blue"></i> ¿Qué incluye?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div class="group relative p-6 rounded-xl border border-white/10 hover:border-green-500/40 transition-all duration-300 overflow-hidden" style="background: rgba(255,255,255,0.02)">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/5 blur-2xl rounded-full group-hover:bg-green-500/15 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-colors">
+                <i data-lucide="refresh-cw" class="w-6 h-6 text-green-400"></i>
+              </div>
+              <h4 id="mant-act" class="font-bold mb-2 group-hover:text-green-400 transition-colors">Actualizaciones de contenido</h4>
+              <p class="text-gray-500 text-sm leading-relaxed">Mantenemos tu web siempre al día con los últimos cambios y novedades de tu negocio.</p>
             </div>
           </div>
+
+          <div class="group relative p-6 rounded-xl border border-white/10 hover:border-red-500/40 transition-all duration-300 overflow-hidden" style="background: rgba(255,255,255,0.02)">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full group-hover:bg-red-500/15 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4 group-hover:border-red-500/50 transition-colors">
+                <i data-lucide="lock" class="w-6 h-6 text-red-400"></i>
+              </div>
+              <h4 id="mant-seg" class="font-bold mb-2 group-hover:text-red-400 transition-colors">Seguridad de la web</h4>
+              <p class="text-gray-500 text-sm leading-relaxed">Protegemos tu web frente a amenazas, ataques y vulnerabilidades de seguridad.</p>
+            </div>
+          </div>
+
+          <div class="group relative p-6 rounded-xl border border-white/10 hover:border-blue-500/40 transition-all duration-300 overflow-hidden" style="background: rgba(255,255,255,0.02)">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 blur-2xl rounded-full group-hover:bg-blue-500/15 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:border-blue-500/50 transition-colors">
+                <i data-lucide="activity" class="w-6 h-6 text-blue-400"></i>
+              </div>
+              <h4 id="mant-rend" class="font-bold mb-2 group-hover:text-blue-400 transition-colors">Optimización de rendimiento</h4>
+              <p class="text-gray-500 text-sm leading-relaxed">Tu web siempre cargando rápido para ofrecer la mejor experiencia a tus clientes.</p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="lg:col-span-1">
-        <div class="glass-panel p-8 rounded-xl sticky top-24">
-          <h3 id="mant-ready" class="text-xl font-bold mb-4">¿Listo para empezar?</h3>
-          <a href="#/contacto" class="block"><button class="mant-btn w-full px-6 py-3 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow">Solicitar Presupuesto</button></a>
-        </div>
+
+      <!-- Por qué es importante -->
+      <div class="mb-10 bg-gradient-to-r from-cyber-blue/5 to-cyber-purple/5 border border-cyber-blue/20 rounded-xl p-8">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="info" class="w-5 h-5 text-cyber-blue"></i> ¿Por qué es importante el mantenimiento?</h2>
+        <p class="text-gray-300 text-sm leading-relaxed">Una web sin mantenimiento puede volverse lenta, vulnerable a ataques o quedarse desactualizada. Con nuestro servicio mensual, te olvidas de todos esos problemas y nos encargamos nosotros de que tu presencia digital esté siempre en perfecto estado.</p>
       </div>
+
+      <a href="#/contacto">
+        <button class="mant-btn w-full md:w-auto px-8 py-4 font-bold tracking-wider uppercase border border-cyber-blue text-cyber-blue hover:text-black hover:bg-cyber-blue transition-all duration-300 btn-glow flex items-center justify-center gap-2">
+          <span id="mant-ready">Solicitar Presupuesto</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </a>
     </div>
   </div>
 </section>
