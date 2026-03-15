@@ -681,48 +681,33 @@
 <!-- PAGE: PLAN PREMIUM -->
 <section id="page-servicios-desarrollo-web-premium" class="page-section hidden pt-10 pb-20">
   <div class="max-w-4xl mx-auto px-4 md:px-8">
-    <a href="#/servicios/desarrollo-web" class="inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors">
-      <i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a Desarrollo Web
-    </a>
+    <a href="#/servicios/desarrollo-web" class="volver-devweb inline-flex items-center text-gray-500 hover:text-cyber-blue mb-8 transition-colors"><i data-lucide="arrow-left" class="mr-2 w-4 h-4"></i> Volver a Desarrollo Web</a>
     <div class="scroll-reveal">
       <div class="flex items-center gap-4 mb-6">
         <div class="p-3 bg-purple-500/10 rounded-lg text-purple-400"><i data-lucide="star" class="w-8 h-8"></i></div>
-        <h1 class="text-4xl md:text-5xl font-bold font-display">Desarrollo Web <span class="text-purple-400">Premium</span></h1>
+        <h1 id="premium-title" class="text-4xl md:text-5xl font-bold font-display">Desarrollo Web <span class="text-purple-400">Premium</span></h1>
       </div>
-
-      <!-- Para quién va -->
       <div class="mt-2 mb-10 bg-purple-500/5 border border-purple-500/20 rounded-xl p-8">
-        <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-purple-400"></i> ¿Para quién es este plan?</h2>
-        <p class="text-gray-300 leading-relaxed">
-          Diseñado para <strong class="text-white">empresas, marcas consolidadas y proyectos ambiciosos</strong> que necesitan una solución web completa, a medida y con todas las funcionalidades posibles.
-        </p>
+        <h2 id="premium-quien" class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-purple-400"></i> ¿Para quién es este plan?</h2>
+        <p id="premium-quien-desc" class="text-gray-300 leading-relaxed">Diseñado para <strong class="text-white">negocios que quieren una web más completa y optimizada</strong>, con más páginas, mejor SEO y presencia en redes sociales.</p>
         <ul class="mt-4 space-y-2 text-gray-400 text-sm">
-          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i> Empresas que necesitan una web robusta y escalable</li>
-          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i> Proyectos con funcionalidades complejas o personalizadas</li>
-          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i> Marcas que quieren una experiencia digital de primer nivel</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i><span id="premium-li1">Empresas que necesitan hasta 7 páginas personalizadas</span></li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i><span id="premium-li2">Negocios que quieren integración con redes sociales</span></li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 mt-0.5"></i><span id="premium-li3">Proyectos que buscan la máxima optimización y velocidad</span></li>
         </ul>
       </div>
-
-      <!-- Qué incluye -->
       <div class="mb-10">
-        <h2 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="package" class="w-5 h-5 text-purple-400"></i> ¿Qué incluye?</h2>
+        <h2 id="premium-incluye" class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="package" class="w-5 h-5 text-purple-400"></i> ¿Qué incluye?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Todo lo del plan Pro</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Páginas y secciones ilimitadas</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Diseño 100% a medida y exclusivo</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Integraciones con APIs externas</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Panel de administración avanzado</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Seguridad avanzada y backups</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>3 meses de soporte prioritario</span></div>
-          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span>Estrategia SEO completa</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f1">Hasta 7 páginas con diseño totalmente personalizado</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f2">Botón de WhatsApp y optimización SEO local avanzada</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f3">Galería de imágenes profesional</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f4">Integración con redes sociales</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f5">Sección de blog/noticias gratis durante 1 mes</span></div>
+          <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg"><i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0"></i><span id="premium-f6">Optimización de velocidad</span></div>
         </div>
       </div>
-
-      <a href="#/contacto">
-        <button class="w-full md:w-auto px-8 py-4 font-bold tracking-wider uppercase border border-purple-500 text-purple-400 hover:text-black hover:bg-purple-500 transition-all duration-300 flex items-center justify-center gap-2" style="box-shadow: 0 0 15px rgba(168,85,247,0.3);">
-          Solicitar este plan <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-      </a>
+      <a href="#/contacto"><button class="solicitar-premium-btn w-full md:w-auto px-8 py-4 font-bold tracking-wider uppercase border border-purple-500 text-purple-400 hover:text-black hover:bg-purple-500 transition-all duration-300 flex items-center justify-center gap-2" style="box-shadow:0 0 15px rgba(168,85,247,0.3)">Solicitar este plan <i data-lucide="arrow-right" class="w-4 h-4"></i></button></a>
     </div>
   </div>
 </section>
