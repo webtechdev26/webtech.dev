@@ -1092,68 +1092,85 @@
       </div>
     </div>
 
-    <!-- Estadísticas -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 scroll-reveal delay-100">
-      <div class="glass-panel p-6 rounded-xl text-center border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300 group">
-        <div class="text-4xl font-bold text-cyber-blue mb-2 font-display group-hover:scale-110 transition-transform">50+</div>
-        <div id="nosotros-stat1" class="text-xs text-gray-400 uppercase tracking-widest">Proyectos</div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl text-center border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
-        <div class="text-4xl font-bold text-purple-500 mb-2 font-display group-hover:scale-110 transition-transform">99%</div>
-        <div id="nosotros-stat2" class="text-xs text-gray-400 uppercase tracking-widest">Satisfacción</div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl text-center border border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 group">
-        <div class="text-4xl font-bold text-pink-500 mb-2 font-display group-hover:scale-110 transition-transform">24/7</div>
-        <div id="nosotros-stat3" class="text-xs text-gray-400 uppercase tracking-widest">Soporte IA</div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl text-center border border-green-500/20 hover:border-green-500/50 transition-all duration-300 group">
-        <div class="text-4xl font-bold text-green-500 mb-2 font-display group-hover:scale-110 transition-transform">100%</div>
-        <div id="nosotros-stat4" class="text-xs text-gray-400 uppercase tracking-widest">Compromiso</div>
+    <!-- Pol Alegre -->
+    <div class="flex justify-center mb-20 scroll-reveal delay-100">
+      <div class="relative group max-w-sm w-full">
+        <!-- Glow exterior -->
+        <div class="absolute -inset-1 bg-gradient-to-b from-cyber-blue via-cyber-purple to-transparent rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+
+        <div class="relative rounded-2xl overflow-hidden border border-cyber-blue/20" style="background: rgba(10,10,18,0.9)">
+          <!-- Imagen grande -->
+          <div class="relative overflow-hidden bg-cyber-dark" style="height: 420px;">
+            <!-- Fondo con glow -->
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,240,255,0.08), transparent);"></div>
+            <img
+              src="img/foto_sobr_nosotros.png"
+              class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+              alt="Pol Alegre"
+            />
+            <!-- Gradiente inferior -->
+            <div class="absolute bottom-0 left-0 w-full h-24" style="background: linear-gradient(to top, rgba(10,10,18,0.95), transparent);"></div>
+          </div>
+
+          <!-- Info debajo -->
+          <div class="px-8 pb-8 pt-4 text-center">
+            <h3 class="text-3xl font-bold text-white font-display mb-4">Pol Alegre</h3>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-center gap-3 py-2 px-4 rounded-lg border border-cyber-blue/20 bg-cyber-blue/5">
+                <i data-lucide="crown" class="w-4 h-4 text-cyber-blue flex-shrink-0"></i>
+                <span class="text-cyber-blue text-sm font-bold uppercase tracking-wider">CEO & Fundador</span>
+              </div>
+              <div class="flex items-center justify-center gap-3 py-2 px-4 rounded-lg border border-purple-500/20 bg-purple-500/5">
+                <i data-lucide="code-2" class="w-4 h-4 text-purple-400 flex-shrink-0"></i>
+                <span class="text-purple-400 text-sm font-bold uppercase tracking-wider">Full Stack Developer</span>
+              </div>
+              <div class="flex items-center justify-center gap-3 py-2 px-4 rounded-lg border border-pink-500/20 bg-pink-500/5">
+                <i data-lucide="pen-tool" class="w-4 h-4 text-pink-400 flex-shrink-0"></i>
+                <span class="text-pink-400 text-sm font-bold uppercase tracking-wider">UX/UI Designer</span>
+              </div>
+            </div>
+            <p id="pol-bio" class="text-gray-400 text-sm leading-relaxed mt-5">Apasionado por la tecnología y el diseño, Pol lidera WebTech con una visión clara de innovación y calidad.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Misión -->
-    <div class="mb-20 scroll-reveal">
-      <div class="glass-panel rounded-2xl overflow-hidden border border-white/10">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-          <!-- Texto -->
-          <div class="p-10 md:p-12 flex flex-col justify-center space-y-6 text-gray-300 text-lg leading-relaxed border-b lg:border-b-0 lg:border-r border-white/10">
-            <h2 id="nosotros-mision" class="text-3xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4">Nuestra misión</h2>
+    <div class="mb-20 scroll-reveal delay-200">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-panel p-8 rounded-2xl border border-white/10">
+          <h2 id="nosotros-mision" class="text-2xl font-bold font-display text-white border-l-4 border-cyber-blue pl-4 mb-6">Nuestra misión</h2>
+          <div class="space-y-4 text-gray-400 leading-relaxed">
             <p id="nosotros-p1">WebTech es una agencia dedicada a crear soluciones web modernas para pequeñas y medianas empresas. Nuestro objetivo es mejorar la presencia digital de los negocios, optimizar sus procesos y ofrecer una mejor experiencia a sus clientes.</p>
             <p id="nosotros-p2">Desarrollamos páginas y aplicaciones web a medida, priorizando el diseño, el rendimiento y la usabilidad. También integramos inteligencia artificial de forma práctica y adaptada a cada empresa.</p>
             <p id="nosotros-p3">Nuestro enfoque se basa en la calidad, la innovación y un trato cercano con los clientes, buscando convertirnos en un socio tecnológico a largo plazo.</p>
           </div>
+        </div>
 
-          <!-- Tarjeta Pol -->
-          <div class="p-10 md:p-12 flex flex-col items-center justify-center text-center">
-            <!-- Imagen -->
-            <div class="relative mb-6">
-              <!-- Glow detrás de la imagen -->
-              <div class="absolute inset-0 bg-cyber-blue/20 blur-2xl rounded-full scale-110"></div>
-              <div class="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-cyber-blue/40 group hover:border-cyber-blue transition-colors duration-300" style="background: rgba(0,240,255,0.05)">
-                <img
-                  src="img/foto_sobr_nosotros.png"
-                  class="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-105"
-                  alt="Pol Alegre"
-                />
-              </div>
-            </div>
-
-            <!-- Info -->
-            <h3 class="text-2xl font-bold text-white font-display mb-3">Pol Alegre</h3>
-            <div class="flex flex-wrap justify-center gap-2 mb-4">
-              <span class="text-xs px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue font-bold uppercase tracking-wider">CEO</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-bold uppercase tracking-wider">Full Stack</span>
-              <span class="text-xs px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 font-bold uppercase tracking-wider">UX/UI</span>
-            </div>
-            <p id="pol-bio" class="text-gray-400 text-sm leading-relaxed max-w-xs">Apasionado por la tecnología y el diseño, Pol lidera WebTech con una visión clara de innovación y calidad.</p>
+        <!-- Stats integradas -->
+        <div class="grid grid-cols-2 gap-4 content-start">
+          <div class="glass-panel p-6 rounded-xl text-center border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300 group">
+            <div class="text-4xl font-bold text-cyber-blue mb-2 font-display group-hover:scale-110 transition-transform">50+</div>
+            <div id="nosotros-stat1" class="text-xs text-gray-400 uppercase tracking-widest">Proyectos</div>
+          </div>
+          <div class="glass-panel p-6 rounded-xl text-center border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 group">
+            <div class="text-4xl font-bold text-purple-500 mb-2 font-display group-hover:scale-110 transition-transform">99%</div>
+            <div id="nosotros-stat2" class="text-xs text-gray-400 uppercase tracking-widest">Satisfacción</div>
+          </div>
+          <div class="glass-panel p-6 rounded-xl text-center border border-pink-500/20 hover:border-pink-500/50 transition-all duration-300 group">
+            <div class="text-4xl font-bold text-pink-500 mb-2 font-display group-hover:scale-110 transition-transform">24/7</div>
+            <div id="nosotros-stat3" class="text-xs text-gray-400 uppercase tracking-widest">Soporte IA</div>
+          </div>
+          <div class="glass-panel p-6 rounded-xl text-center border border-green-500/20 hover:border-green-500/50 transition-all duration-300 group">
+            <div class="text-4xl font-bold text-green-500 mb-2 font-display group-hover:scale-110 transition-transform">100%</div>
+            <div id="nosotros-stat4" class="text-xs text-gray-400 uppercase tracking-widest">Compromiso</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Valores -->
-    <div class="mb-10 scroll-reveal delay-100">
+    <div class="scroll-reveal delay-300">
       <h2 id="valores-title" class="text-3xl font-bold mb-10 text-center font-display">Nuestros <span class="text-cyber-blue">Valores</span></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="group relative p-8 rounded-xl text-center border border-white/5 hover:border-cyber-blue/40 transition-all duration-300 overflow-hidden hover:scale-105" style="background: rgba(255,255,255,0.02)">
